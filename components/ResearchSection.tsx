@@ -68,7 +68,7 @@ const ResearchSection = () => {
                 transition={{ duration: 0.5, delay: 0.2 }}
               >
                 <Image
-                  src="/logo.svg"
+                  src="/hero.png"
                   alt="Skin Brightening Technology"
                   width={500}
                   height={400}

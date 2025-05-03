@@ -25,9 +25,10 @@ const Header = () => {
 
   const navLinks = [
     { name: "About", href: "/about" },
-    { name: "Products", href: "/products" },
+    { name: "Products", href: "/product" },
     { name: "Research", href: "/research" },
     { name: "Testimonials", href: "/testimonials" },
+    { name: "Careers", href: "/careers" },
     { name: "Contact", href: "/contact" },
   ]
 
@@ -41,7 +42,7 @@ const Header = () => {
       <div className="container mx-auto px-4 flex items-center justify-between">
         <div className="flex items-center">
           <Link href="/" className="flex items-center">
-            <img src="/logo.svg" alt="Magnova Logo" className="h-6 w-auto sm:h-8 mr-1 sm:mr-2" />
+            {/* <img src="/logo.svg" alt="Magnova Logo" className="h-6 w-auto sm:h-8 mr-1 sm:mr-2" /> */}
             <div className="flex flex-col sm:flex-row">
               <span className="text-primary-red font-heading text-lg sm:text-xl font-bold">Magnova</span>
               <span className="text-primary-green font-heading text-lg sm:text-xl font-bold">Therapeutics</span>
