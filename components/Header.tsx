@@ -5,7 +5,7 @@ import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { Menu, Search, Moon, Sun, Globe } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
+import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "@/components/ui/sheet"
 import { useTheme } from "next-themes"
 import { cn } from "@/lib/utils"
 
@@ -35,15 +35,17 @@ const Header = () => {
     <header
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
-        isScrolled ? "bg-white shadow-sm py-2" : "bg-white py-4",
+        isScrolled ? "bg-white shadow-sm py-2" : "bg-white py-2 md:py-4",
       )}
     >
       <div className="container mx-auto px-4 flex items-center justify-between">
         <div className="flex items-center">
           <Link href="/" className="flex items-center">
-            <img src="/logo.svg" alt="Magnova Logo" className="h-8 w-auto mr-2" />
-            <span className="text-primary-red font-heading text-xl font-bold">Magnova</span>
-            <span className="text-primary-green font-heading text-xl font-bold">Therapeutics</span>
+            <img src="/logo.svg" alt="Magnova Logo" className="h-6 w-auto sm:h-8 mr-1 sm:mr-2" />
+            <div className="flex flex-col sm:flex-row">
+              <span className="text-primary-red font-heading text-lg sm:text-xl font-bold">Magnova</span>
+              <span className="text-primary-green font-heading text-lg sm:text-xl font-bold">Therapeutics</span>
+            </div>
           </Link>
         </div>
 
@@ -64,35 +66,42 @@ const Header = () => {
         </nav>
 
         {/* Utilities */}
-        <div className="flex items-center space-x-4">
-          <button className="text-secondary-charcoal hover:text-primary-red transition-colors">
-            <Search size={20} />
+        <div className="flex items-center space-x-2 sm:space-x-4">
+          <button className="text-secondary-charcoal hover:text-primary-red transition-colors hidden sm:block">
+            <Search size={18} />
           </button>
 
           <button
             className="text-secondary-charcoal hover:text-primary-red transition-colors"
             onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
           >
-            {theme === "dark" ? <Sun size={20} /> : <Moon size={20} />}
+            {theme === "dark" ? <Sun size={18} /> : <Moon size={18} />}
           </button>
 
-          <button className="text-secondary-charcoal hover:text-primary-red transition-colors">
-            <Globe size={20} />
+          <button className="text-secondary-charcoal hover:text-primary-red transition-colors hidden sm:block">
+            <Globe size={18} />
           </button>
 
-          <Button className="hidden md:flex bg-primary-gold text-secondary-charcoal hover:bg-primary-gold/90">
-            Shop Skincare Solutions
+          <Button className="hidden md:flex bg-primary-gold text-secondary-charcoal hover:bg-primary-gold/90 text-sm">
+            Shop Skincare
           </Button>
 
           {/* Mobile Menu */}
           <Sheet>
             <SheetTrigger asChild>
-              <Button variant="ghost" size="icon" className="md:hidden">
-                <Menu />
+              <Button variant="ghost" size="icon" className="md:hidden p-1">
+                <Menu size={22} />
               </Button>
             </SheetTrigger>
-            <SheetContent>
+            <SheetContent className="w-[80vw] sm:w-[350px]">
+              <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
               <div className="flex flex-col space-y-4 mt-8">
+                <div className="flex items-center mb-6">
+                  <img src="/logo.svg" alt="Magnova Logo" className="h-8 w-auto mr-2" />
+                  <span className="text-primary-red font-heading text-xl font-bold">Magnova</span>
+                  <span className="text-primary-green font-heading text-xl font-bold">Therapeutics</span>
+                </div>
+                
                 {navLinks.map((link) => (
                   <Link
                     key={link.name}
@@ -105,6 +114,16 @@ const Header = () => {
                     {link.name}
                   </Link>
                 ))}
+                
+                <div className="flex space-x-4 mt-4 mb-2">
+                  <button className="text-secondary-charcoal hover:text-primary-red transition-colors">
+                    <Search size={20} />
+                  </button>
+                  <button className="text-secondary-charcoal hover:text-primary-red transition-colors">
+                    <Globe size={20} />
+                  </button>
+                </div>
+                
                 <Button className="mt-4 bg-primary-gold text-secondary-charcoal hover:bg-primary-gold/90">
                   Shop Skincare Solutions
                 </Button>

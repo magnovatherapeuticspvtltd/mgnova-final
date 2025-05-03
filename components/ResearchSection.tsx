@@ -17,7 +17,7 @@ const ResearchSection = () => {
         </div>
 
         <Tabs defaultValue="technology" className="w-full">
-          <TabsList className="grid w-full md:w-fit mx-auto grid-cols-3 mb-8">
+          <TabsList className="grid w-full md:w-fit mx-auto grid-cols-3 mb-8 gap-1 text-xs sm:text-sm">
             <TabsTrigger value="technology">Technology</TabsTrigger>
             <TabsTrigger value="clinical">Clinical Results</TabsTrigger>
             <TabsTrigger value="timeline">Research Timeline</TabsTrigger>
@@ -62,17 +62,19 @@ const ResearchSection = () => {
               </motion.div>
 
               <motion.div
-                className="md:w-1/2 relative"
+                className="md:w-1/2 relative w-full"
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5, delay: 0.2 }}
               >
                 <Image
-                  src="/logo.svg?height=400&width=500"
+                  src="/logo.svg"
                   alt="Skin Brightening Technology"
                   width={500}
                   height={400}
-                  className="rounded-lg shadow-md"
+                  className="rounded-lg shadow-md w-full h-auto"
+                  priority
+                  sizes="(max-width: 768px) 100vw, 50vw"
                 />
               </motion.div>
             </div>
@@ -160,11 +162,12 @@ const ResearchSection = () => {
 
                 <div className="mt-6">
                   <Image
-                    src="/placeholder.svg?height=200&width=400"
+                    src="/placeholder.svg"
                     alt="Clinical Study Methodology"
                     width={400}
                     height={200}
-                    className="rounded-lg"
+                    className="rounded-lg w-full h-auto"
+                    sizes="(max-width: 768px) 100vw, 400px"
                   />
                 </div>
               </div>
@@ -178,9 +181,9 @@ const ResearchSection = () => {
 
               <div className="space-y-12">
                 <div className="relative">
-                  <div className="absolute left-1/2 transform -translate-x-1/2 -mt-2 w-5 h-5 rounded-full bg-primary-green"></div>
-                  <div className="ml-auto mr-auto md:ml-0 md:mr-[calc(50%+2rem)] md:pr-8 md:w-[calc(50%-2rem)] text-right">
-                    <h3 className="text-xl font-bold text-primary-green">2018</h3>
+                  <div className="absolute left-1/2 transform -translate-x-1/2 -mt-2 w-4 h-4 sm:w-5 sm:h-5 rounded-full bg-primary-green"></div>
+                  <div className="ml-auto mr-auto md:ml-0 md:mr-[calc(50%+2rem)] md:pr-8 md:w-[calc(50%-2rem)] text-center md:text-right p-4 bg-white/80 rounded-lg md:bg-transparent relative z-10">
+                    <h3 className="text-lg sm:text-xl font-bold text-primary-green">2018</h3>
                     <h4 className="font-medium">Initial Research</h4>
                     <p className="text-sm text-muted-foreground">
                       Began research on novel skin brightening compounds and delivery systems.
@@ -189,9 +192,9 @@ const ResearchSection = () => {
                 </div>
 
                 <div className="relative">
-                  <div className="absolute left-1/2 transform -translate-x-1/2 -mt-2 w-5 h-5 rounded-full bg-primary-green"></div>
-                  <div className="ml-auto mr-auto md:mr-0 md:ml-[calc(50%+2rem)] md:pl-8 md:w-[calc(50%-2rem)]">
-                    <h3 className="text-xl font-bold text-primary-green">2019</h3>
+                  <div className="absolute left-1/2 transform -translate-x-1/2 -mt-2 w-4 h-4 sm:w-5 sm:h-5 rounded-full bg-primary-green"></div>
+                  <div className="ml-auto mr-auto md:mr-0 md:ml-[calc(50%+2rem)] md:pl-8 md:w-[calc(50%-2rem)] text-center md:text-left p-4 bg-white/80 rounded-lg md:bg-transparent relative z-10">
+                    <h3 className="text-lg sm:text-xl font-bold text-primary-green">2019</h3>
                     <h4 className="font-medium">Formula Development</h4>
                     <p className="text-sm text-muted-foreground">
                       Developed and refined our proprietary formulations through extensive lab testing.
@@ -200,9 +203,9 @@ const ResearchSection = () => {
                 </div>
 
                 <div className="relative">
-                  <div className="absolute left-1/2 transform -translate-x-1/2 -mt-2 w-5 h-5 rounded-full bg-primary-green"></div>
-                  <div className="ml-auto mr-auto md:ml-0 md:mr-[calc(50%+2rem)] md:pr-8 md:w-[calc(50%-2rem)] text-right">
-                    <h3 className="text-xl font-bold text-primary-green">2020</h3>
+                  <div className="absolute left-1/2 transform -translate-x-1/2 -mt-2 w-4 h-4 sm:w-5 sm:h-5 rounded-full bg-primary-green"></div>
+                  <div className="ml-auto mr-auto md:ml-0 md:mr-[calc(50%+2rem)] md:pr-8 md:w-[calc(50%-2rem)] text-center md:text-right p-4 bg-white/80 rounded-lg md:bg-transparent relative z-10">
+                    <h3 className="text-lg sm:text-xl font-bold text-primary-green">2020</h3>
                     <h4 className="font-medium">Clinical Testing</h4>
                     <p className="text-sm text-muted-foreground">
                       Conducted comprehensive clinical trials to validate efficacy and safety.
@@ -211,9 +214,9 @@ const ResearchSection = () => {
                 </div>
 
                 <div className="relative">
-                  <div className="absolute left-1/2 transform -translate-x-1/2 -mt-2 w-5 h-5 rounded-full bg-primary-green"></div>
-                  <div className="ml-auto mr-auto md:mr-0 md:ml-[calc(50%+2rem)] md:pl-8 md:w-[calc(50%-2rem)]">
-                    <h3 className="text-xl font-bold text-primary-green">2021</h3>
+                  <div className="absolute left-1/2 transform -translate-x-1/2 -mt-2 w-4 h-4 sm:w-5 sm:h-5 rounded-full bg-primary-green"></div>
+                  <div className="ml-auto mr-auto md:mr-0 md:ml-[calc(50%+2rem)] md:pl-8 md:w-[calc(50%-2rem)] text-center md:text-left p-4 bg-white/80 rounded-lg md:bg-transparent relative z-10">
+                    <h3 className="text-lg sm:text-xl font-bold text-primary-green">2021</h3>
                     <h4 className="font-medium">Product Launch</h4>
                     <p className="text-sm text-muted-foreground">
                       Launched our first line of skincare products to the market with great success.
@@ -222,9 +225,9 @@ const ResearchSection = () => {
                 </div>
 
                 <div className="relative">
-                  <div className="absolute left-1/2 transform -translate-x-1/2 -mt-2 w-5 h-5 rounded-full bg-primary-red"></div>
-                  <div className="ml-auto mr-auto md:ml-0 md:mr-[calc(50%+2rem)] md:pr-8 md:w-[calc(50%-2rem)] text-right">
-                    <h3 className="text-xl font-bold text-primary-red">Present</h3>
+                  <div className="absolute left-1/2 transform -translate-x-1/2 -mt-2 w-4 h-4 sm:w-5 sm:h-5 rounded-full bg-primary-red"></div>
+                  <div className="ml-auto mr-auto md:ml-0 md:mr-[calc(50%+2rem)] md:pr-8 md:w-[calc(50%-2rem)] text-center md:text-right p-4 bg-white/80 rounded-lg md:bg-transparent relative z-10">
+                    <h3 className="text-lg sm:text-xl font-bold text-primary-red">Present</h3>
                     <h4 className="font-medium">Ongoing Innovation</h4>
                     <p className="text-sm text-muted-foreground">
                       Continuing research and development of new formulations and technologies.

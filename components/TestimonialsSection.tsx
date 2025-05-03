@@ -63,37 +63,38 @@ const TestimonialsSection = () => {
   }
 
   return (
-    <section className="py-16 bg-secondary-beige/30">
+    <section className="py-10 sm:py-16 bg-secondary-beige/30">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-secondary-charcoal mb-4">Real Results</h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
+        <div className="text-center mb-8 sm:mb-12">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-secondary-charcoal mb-2 sm:mb-4">Real Results</h2>
+          <p className="text-sm sm:text-base text-muted-foreground max-w-2xl mx-auto">
             See the difference our products have made for our customers.
           </p>
         </div>
 
         <div className="max-w-5xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 items-center">
             {/* Before/After Images */}
             <div className="relative">
-              <div className="relative h-[300px] w-full overflow-hidden rounded-lg shadow-md">
+              <div className="relative h-[250px] sm:h-[300px] w-full overflow-hidden rounded-lg shadow-md">
                 <Image
                   src={showBefore ? testimonials[activeIndex].beforeImage : testimonials[activeIndex].afterImage}
                   alt={`${testimonials[activeIndex].name} ${showBefore ? "Before" : "After"}`}
                   fill
                   className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 50vw"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
                 <div className="absolute bottom-4 left-4 text-white">
-                  <span className="font-medium">{showBefore ? "Before" : "After"}</span>
+                  <span className="text-sm sm:text-base font-medium">{showBefore ? "Before" : "After"}</span>
                 </div>
               </div>
 
-              <div className="flex justify-center mt-4">
+              <div className="flex justify-center mt-3 sm:mt-4">
                 <Button
                   variant="outline"
                   className={cn(
-                    "rounded-l-full border-r-0",
+                    "rounded-l-full border-r-0 text-xs sm:text-sm py-1 h-auto sm:h-9",
                     showBefore ? "bg-primary-red/10 text-primary-red" : "bg-white",
                   )}
                   onClick={() => setShowBefore(true)}
@@ -103,7 +104,7 @@ const TestimonialsSection = () => {
                 <Button
                   variant="outline"
                   className={cn(
-                    "rounded-r-full border-l-0",
+                    "rounded-r-full border-l-0 text-xs sm:text-sm py-1 h-auto sm:h-9",
                     !showBefore ? "bg-primary-green/10 text-primary-green" : "bg-white",
                   )}
                   onClick={() => setShowBefore(false)}
@@ -120,40 +121,40 @@ const TestimonialsSection = () => {
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -20 }}
               transition={{ duration: 0.3 }}
-              className="bg-white rounded-lg shadow-md p-6 relative"
+              className="bg-white rounded-lg shadow-md p-4 sm:p-6 relative"
             >
-              <Quote className="text-primary-gold/30 absolute top-4 left-4 h-12 w-12" />
+              <Quote className="text-primary-gold/30 absolute top-3 sm:top-4 left-3 sm:left-4 h-8 w-8 sm:h-12 sm:w-12" />
 
               <div className="relative z-10">
-                <p className="font-accent text-lg mb-6 pt-8 pl-4">"{testimonials[activeIndex].quote}"</p>
+                <p className="font-accent text-sm sm:text-base md:text-lg mb-4 sm:mb-6 pt-6 sm:pt-8 pl-2 sm:pl-4">"{testimonials[activeIndex].quote}"</p>
 
                 <div className="flex items-center">
                   <div>
-                    <p className="font-medium text-secondary-charcoal">
+                    <p className="font-medium text-secondary-charcoal text-sm sm:text-base">
                       {testimonials[activeIndex].name}, {testimonials[activeIndex].age}
                     </p>
-                    <p className="text-sm text-muted-foreground">{testimonials[activeIndex].location}</p>
+                    <p className="text-xs sm:text-sm text-muted-foreground">{testimonials[activeIndex].location}</p>
                   </div>
                 </div>
               </div>
 
-              <div className="flex justify-between mt-8">
-                <Button variant="outline" size="icon" onClick={prevTestimonial} className="rounded-full">
-                  <ChevronLeft className="h-4 w-4" />
+              <div className="flex justify-between mt-4 sm:mt-8">
+                <Button variant="outline" size="icon" onClick={prevTestimonial} className="rounded-full h-8 w-8 sm:h-9 sm:w-9">
+                  <ChevronLeft className="h-3 w-3 sm:h-4 sm:w-4" />
                 </Button>
 
                 <div className="flex space-x-2">
                   {testimonials.map((_, index) => (
                     <button
                       key={index}
-                      className={cn("w-2 h-2 rounded-full", index === activeIndex ? "bg-primary-red" : "bg-gray-300")}
+                      className={cn("w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full", index === activeIndex ? "bg-primary-red" : "bg-gray-300")}
                       onClick={() => setActiveIndex(index)}
                     />
                   ))}
                 </div>
 
-                <Button variant="outline" size="icon" onClick={nextTestimonial} className="rounded-full">
-                  <ChevronRight className="h-4 w-4" />
+                <Button variant="outline" size="icon" onClick={nextTestimonial} className="rounded-full h-8 w-8 sm:h-9 sm:w-9">
+                  <ChevronRight className="h-3 w-3 sm:h-4 sm:w-4" />
                 </Button>
               </div>
             </motion.div>
