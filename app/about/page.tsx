@@ -18,7 +18,7 @@ export default function AboutPage() {
           </p>
         </div>
       </section>
-      
+
       {/* Company Story Section */}
       <section className="py-12 bg-secondary-beige/30">
         <div className="container mx-auto px-4">
@@ -36,7 +36,7 @@ export default function AboutPage() {
                   Today, we're proud to offer our breakthrough LuxGlow Brightening Serum, with more innovative products in development. Our dedication to quality, efficacy, and safety remains unwavering as we continue to advance the field of dermatological skincare.
                 </p>
               </div>
-              
+
               <div className="mt-8">
                 <Link href="/research">
                   <Button className="bg-primary-gold text-secondary-charcoal hover:bg-primary-gold/90">
@@ -45,7 +45,7 @@ export default function AboutPage() {
                 </Link>
               </div>
             </div>
-            
+
             <div className="md:w-1/2">
               <div className="relative h-[400px] md:h-[500px] w-full rounded-lg overflow-hidden shadow-md">
                 <Image
@@ -60,7 +60,41 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
-      
+
+      {/* Board of Directors Section */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-secondary-charcoal mb-4">Board of Directors</h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              Guiding our strategic vision and governance with expertise and integrity.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            {[
+              "Mrs. Kalindi Devi",
+              "Mr. Mrityunjay Rai",
+              "Mr. Alok Sahoo",
+              "Mr. Sanjay Singh",
+              "Mr. Ravi Shankar Singh",
+              "Mrs. Savera Gupta",
+              "Mr. Aditya Singh"
+            ].map((name, index) => (
+              <Card key={index} className="text-center hover:shadow-md transition-shadow duration-300 border-gray-100 bg-gray-50/50">
+                <CardContent className="pt-6 pb-6">
+                  <div className="w-16 h-16 bg-gradient-to-br from-primary-gold/20 to-primary-red/10 rounded-full mx-auto mb-4 flex items-center justify-center">
+                    <Users className="h-8 w-8 text-primary-gold" />
+                  </div>
+                  <h3 className="text-lg font-semibold text-secondary-charcoal">{name}</h3>
+                  <p className="text-sm text-muted-foreground mt-1">Board Member</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Values Section */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
@@ -70,7 +104,7 @@ export default function AboutPage() {
               These principles guide our work and shape our company culture.
             </p>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
               {
@@ -117,77 +151,11 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
-      
-      {/* Leadership Team Section */}
-      <section className="py-16 bg-secondary-beige/30">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-secondary-charcoal mb-4">Leadership Team</h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
-              Meet the experts behind our innovative skincare solutions.
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              {
-                name: "Dr. Sarah Chen",
-                role: "Chief Executive Officer",
-                bio: "With over 15 years of experience in dermatological research, Dr. Chen leads our company with a passion for evidence-based skincare and innovation.",
-                image: "/placeholder-user.jpg"
-              },
-              {
-                name: "Dr. Michael Roberts",
-                role: "Chief Scientific Officer",
-                bio: "An accomplished biochemist specializing in skin barrier function and active ingredient delivery systems, Dr. Roberts oversees our research and development.",
-                image: "/placeholder-user.jpg"
-              },
-              {
-                name: "Dr. Priya Sharma",
-                role: "Director of Clinical Research",
-                bio: "With expertise in clinical trial design and evaluation, Dr. Sharma ensures the efficacy and safety of all our formulations through rigorous testing.",
-                image: "/placeholder-user.jpg"
-              },
-              {
-                name: "James Wilson",
-                role: "Chief Operations Officer",
-                bio: "A seasoned executive with experience in pharmaceutical and cosmetic industries, James oversees our global operations and supply chain.",
-                image: "/placeholder-user.jpg"
-              },
-              {
-                name: "Rebecca Taylor",
-                role: "Chief Marketing Officer",
-                bio: "Combining her background in dermatology and marketing, Rebecca leads our efforts to educate consumers about effective, science-backed skincare.",
-                image: "/placeholder-user.jpg"
-              },
-              {
-                name: "David Park",
-                role: "Head of Sustainability",
-                bio: "Committed to environmental stewardship, David works to minimize our ecological footprint while maintaining product excellence.",
-                image: "/placeholder-user.jpg"
-              }
-            ].map((member, index) => (
-              <div key={index} className="bg-white rounded-lg shadow-sm overflow-hidden">
-                <div className="aspect-square relative">
-                  <Image
-                    src={member.image}
-                    alt={member.name}
-                    fill
-                    className="object-cover"
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                  />
-                </div>
-                <div className="p-6">
-                  <h3 className="text-lg font-medium text-secondary-charcoal">{member.name}</h3>
-                  <p className="text-primary-red text-sm mb-3">{member.role}</p>
-                  <p className="text-sm text-muted-foreground">{member.bio}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-      
+
+
+
+
+
       {/* Milestones Section */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
@@ -197,11 +165,11 @@ export default function AboutPage() {
               Key milestones in our commitment to advancing skincare through science.
             </p>
           </div>
-          
+
           <div className="max-w-4xl mx-auto">
             <div className="relative">
               <div className="absolute left-0 md:left-1/2 top-0 h-full w-1 bg-primary-green/20 transform md:-translate-x-1/2"></div>
-              
+
               <div className="space-y-12">
                 <div className="relative">
                   <div className="absolute left-0 md:left-1/2 top-6 w-5 h-5 rounded-full bg-primary-green transform -translate-x-1/2"></div>
@@ -213,7 +181,7 @@ export default function AboutPage() {
                     </p>
                   </div>
                 </div>
-                
+
                 <div className="relative">
                   <div className="absolute left-0 md:left-1/2 top-6 w-5 h-5 rounded-full bg-primary-green transform -translate-x-1/2"></div>
                   <div className="md:w-1/2 md:ml-auto pl-10 md:pl-12">
@@ -224,7 +192,7 @@ export default function AboutPage() {
                     </p>
                   </div>
                 </div>
-                
+
                 <div className="relative">
                   <div className="absolute left-0 md:left-1/2 top-6 w-5 h-5 rounded-full bg-primary-green transform -translate-x-1/2"></div>
                   <div className="md:w-1/2 pl-10 md:pl-0 md:pr-12 text-left md:text-right">
@@ -235,7 +203,7 @@ export default function AboutPage() {
                     </p>
                   </div>
                 </div>
-                
+
                 <div className="relative">
                   <div className="absolute left-0 md:left-1/2 top-6 w-5 h-5 rounded-full bg-primary-green transform -translate-x-1/2"></div>
                   <div className="md:w-1/2 md:ml-auto pl-10 md:pl-12">
@@ -246,7 +214,7 @@ export default function AboutPage() {
                     </p>
                   </div>
                 </div>
-                
+
                 <div className="relative">
                   <div className="absolute left-0 md:left-1/2 top-6 w-5 h-5 rounded-full bg-primary-green transform -translate-x-1/2"></div>
                   <div className="md:w-1/2 pl-10 md:pl-0 md:pr-12 text-left md:text-right">
@@ -257,7 +225,7 @@ export default function AboutPage() {
                     </p>
                   </div>
                 </div>
-                
+
                 <div className="relative">
                   <div className="absolute left-0 md:left-1/2 top-6 w-5 h-5 rounded-full bg-primary-red transform -translate-x-1/2"></div>
                   <div className="md:w-1/2 md:ml-auto pl-10 md:pl-12">
@@ -273,7 +241,7 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
-      
+
       {/* CTA Section */}
       <section className="py-16 bg-primary-green/10">
         <div className="container mx-auto px-4 text-center">
@@ -281,7 +249,7 @@ export default function AboutPage() {
           <p className="text-muted-foreground max-w-2xl mx-auto mb-8">
             Experience the difference of scientifically-proven skincare or become part of our growing team.
           </p>
-          
+
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <Link href="/product">
               <Button className="bg-primary-red text-white hover:bg-primary-red/90">
