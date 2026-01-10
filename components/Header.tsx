@@ -4,6 +4,7 @@ import { useState, useEffect } from "react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { Menu, Search, Moon, Sun, Globe } from "lucide-react"
+import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "@/components/ui/sheet"
 import { useTheme } from "next-themes"
@@ -81,6 +82,16 @@ const Header = () => {
           </SheetContent>
         </Sheet>
 
+        {/* Logo - Desktop */}
+        {/* Logo - Desktop - Larger */}
+        <Link href="/" className="hidden md:flex absolute left-8 items-center transition-opacity hover:opacity-80">
+          <Image src="/logo.svg" alt="Magnova Therapeutics" width={56} height={56} className="w-14 h-14" />
+          <div className="ml-3 flex flex-col">
+            <span className="text-primary-red font-heading text-2xl font-black tracking-tight leading-none">Magnova</span>
+            <span className="text-secondary-charcoal font-heading text-sm font-light tracking-wide leading-none">Therapeutics</span>
+          </div>
+        </Link>
+
         {/* Desktop Navigation - Centered */}
         <nav className="hidden md:flex items-center space-x-1 mx-auto bg-white/60 p-1.5 rounded-full border border-white/40 shadow-sm backdrop-blur-md hover:shadow-md transition-shadow duration-300">
           {navLinks.map((link) => (
@@ -101,13 +112,7 @@ const Header = () => {
 
         {/* Utilities */}
         <div className="flex items-center space-x-3 md:absolute md:right-8">
-          <button
-            onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-            className="p-2.5 rounded-full hover:bg-white/50 text-secondary-charcoal transition-colors focus:outline-none backdrop-blur-sm"
-            aria-label="Toggle theme"
-          >
-            {theme === "dark" ? <Sun size={20} /> : <Moon size={20} />}
-          </button>
+          {/* Theme toggle removed for cleaner look */}
 
           <Button className="hidden md:flex bg-primary-red text-white hover:bg-rose-800 rounded-full px-7 py-5 text-sm font-bold tracking-wide shadow-lg shadow-primary-red/20 hover:shadow-primary-red/40 transition-all transform hover:-translate-y-0.5 btn-liquid border-none">
             Shop Now

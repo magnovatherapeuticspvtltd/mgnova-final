@@ -1,4 +1,5 @@
 import Link from "next/link"
+import Image from "next/image"
 import { Facebook, Twitter, Instagram, Linkedin, Mail } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -10,10 +11,13 @@ const Footer = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
           {/* Company Information */}
           <div>
-            <div className="flex items-center mb-4">
-              <div className="flex flex-col sm:flex-row">
-                <span className="text-primary-red font-heading text-xl font-bold">Magnova</span>
-                <span className="text-primary-green font-heading text-xl font-bold">Therapeutics</span>
+            <div className="flex items-center mb-6">
+              <div className="flex flex-col sm:flex-row items-center gap-6">
+                <Image src="/logo.svg" alt="Magnova Therapeutics" width={160} height={160} className="w-40 h-40" />
+                <div className="flex flex-col">
+                  <span className="text-primary-red font-heading text-4xl font-bold leading-none">Magnova</span>
+                  <span className="text-secondary-charcoal font-heading text-xl font-light tracking-wide leading-none">Therapeutics</span>
+                </div>
               </div>
             </div>
             <p className="text-muted-foreground mb-4">
