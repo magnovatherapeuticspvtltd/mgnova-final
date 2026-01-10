@@ -47,54 +47,60 @@ const ProductShowcase = () => {
             <div className="flex flex-col md:flex-row">
               {/* Product Image - Left side on desktop, top on mobile */}
               <div className="md:w-1/2 relative h-[300px] md:h-[450px] bg-secondary-white">
-                <div className="absolute top-3 left-3 bg-primary-gold text-secondary-charcoal text-sm font-medium px-3 py-1.5 rounded-full">
+                <div className="absolute top-3 left-3 bg-primary-gold text-secondary-charcoal text-xs font-bold uppercase tracking-widest px-4 py-2 rounded-full z-10 shadow-sm">
                   Best Seller
                 </div>
-                <Image
-                  src={featuredProduct.image}
-                  alt={featuredProduct.name}
-                  fill
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                  className="object-contain p-6"
-                  priority
-                />
+                <motion.div
+                  whileHover={{ y: -10, scale: 1.02 }}
+                  transition={{ duration: 0.4, ease: "easeOut" }}
+                  className="w-full h-full relative"
+                >
+                  <Image
+                    src={featuredProduct.image}
+                    alt={featuredProduct.name}
+                    fill
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    className="object-contain p-6 drop-shadow-xl"
+                    priority
+                  />
+                </motion.div>
               </div>
-              
+
               {/* Product Details - Right side on desktop, bottom on mobile */}
               <div className="md:w-1/2 p-5 sm:p-8">
                 <div className="flex flex-col h-full">
                   <div>
                     <div className="text-sm text-primary-red font-medium mb-1">{featuredProduct.category}</div>
                     <h3 className="font-heading text-xl sm:text-2xl font-semibold mb-2">{featuredProduct.name}</h3>
-                    
+
                     <div className="flex items-center mb-3">
                       {Array(5).fill(0).map((_, i) => (
                         <Star key={i} size={16} className="text-primary-gold fill-primary-gold" />
                       ))}
                       <span className="ml-2 text-sm text-muted-foreground">(128 reviews)</span>
                     </div>
-                    
+
                     <p className="text-muted-foreground mb-6">{featuredProduct.description}</p>
-                  
+
                     {/* Tabs for ingredients and benefits */}
                     <div className="mb-6">
                       <div className="flex border-b">
-                        <button 
+                        <button
                           className={cn(
                             "pb-2 px-4 text-sm font-medium border-b-2 -mb-px",
-                            activeTab === 'ingredients' 
-                              ? "border-primary-red text-primary-red" 
+                            activeTab === 'ingredients'
+                              ? "border-primary-red text-primary-red"
                               : "border-transparent hover:text-primary-red/70"
                           )}
                           onClick={() => setActiveTab('ingredients')}
                         >
                           Key Ingredients
                         </button>
-                        <button 
+                        <button
                           className={cn(
                             "pb-2 px-4 text-sm font-medium border-b-2 -mb-px",
-                            activeTab === 'benefits' 
-                              ? "border-primary-red text-primary-red" 
+                            activeTab === 'benefits'
+                              ? "border-primary-red text-primary-red"
                               : "border-transparent hover:text-primary-red/70"
                           )}
                           onClick={() => setActiveTab('benefits')}
@@ -102,7 +108,7 @@ const ProductShowcase = () => {
                           Benefits
                         </button>
                       </div>
-                      
+
                       <div className="pt-4">
                         {activeTab === 'ingredients' ? (
                           <div className="flex flex-wrap gap-2">
@@ -124,7 +130,7 @@ const ProductShowcase = () => {
                       </div>
                     </div>
                   </div>
-                  
+
                   <div className="mt-auto">
                     <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
                       <Button className="bg-primary-red text-white hover:bg-primary-red/90 sm:flex-1">

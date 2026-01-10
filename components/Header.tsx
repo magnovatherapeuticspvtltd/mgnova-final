@@ -24,6 +24,7 @@ const Header = () => {
   }, [])
 
   const navLinks = [
+    { name: "Home", href: "/" },
     { name: "About", href: "/about" },
     { name: "Products", href: "/product" },
     { name: "Research", href: "/research" },
@@ -35,76 +36,80 @@ const Header = () => {
   return (
     <header
       className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
-        isScrolled ? "bg-white/80 backdrop-blur-md shadow-sm py-2" : "bg-white/50 backdrop-blur-sm py-3",
+        "fixed top-0 left-0 right-0 z-50 transition-all duration-500",
+        isScrolled ? "bg-white/90 backdrop-blur-xl shadow-lg shadow-black/5 py-3 border-b border-gray-100/50" : "bg-white/0 backdrop-blur-[2px] py-6",
       )}
     >
       <div className="container mx-auto px-4 flex items-center justify-between">
-        
-        {/* Mobile Menu Trigger (Left aligned on mobile) */}
+
+        {/* Mobile Menu Trigger */}
         <Sheet>
-            <SheetTrigger asChild>
-              <Button variant="ghost" size="icon" className="md:hidden p-1 mr-auto">
-                <Menu size={22} />
-              </Button>
-            </SheetTrigger>
-            <SheetContent side="left" className="w-[80vw] sm:w-[350px]">
-              <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
-              <div className="flex flex-col space-y-4 mt-8">
-                <div className="flex items-center mb-6">
-                   {/* Kept logo for mobile context inside drawer */}
-                  <span className="text-primary-red font-heading text-xl font-bold">Magnova</span>
-                  <span className="text-primary-green font-heading text-xl font-bold">Therapeutics</span>
-                </div>
-                
+          <SheetTrigger asChild>
+            <Button variant="ghost" size="icon" className="md:hidden p-1 mr-auto hover:bg-white/50">
+              <Menu size={24} />
+            </Button>
+          </SheetTrigger>
+          <SheetContent side="left" className="w-[85vw] sm:w-[380px] border-r-0 bg-white/95 backdrop-blur-xl">
+            <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
+            <div className="flex flex-col space-y-6 mt-10">
+              <div className="flex items-center mb-4 px-2">
+                <span className="text-primary-red font-heading text-2xl font-black tracking-tight">Magnova</span>
+                <span className="text-secondary-charcoal font-heading text-xl font-light ml-1">Therapeutics</span>
+              </div>
+
+              <div className="flex flex-col space-y-1">
                 {navLinks.map((link) => (
                   <Link
                     key={link.name}
                     href={link.href}
                     className={cn(
-                      "text-secondary-charcoal hover:text-primary-red transition-colors py-2 font-medium border-b border-gray-100",
-                      pathname === link.href && "text-primary-red",
+                      "text-lg font-medium text-secondary-charcoal hover:text-primary-red hover:bg-gray-50 px-4 py-3 rounded-lg transition-all",
+                      pathname === link.href && "text-primary-red bg-primary-red/5 font-bold",
                     )}
                   >
                     {link.name}
                   </Link>
                 ))}
-                
-                 <Button className="mt-4 bg-primary-gold text-secondary-charcoal hover:bg-primary-gold/90 w-full">
-                  Shop Skincare
+              </div>
+
+              <div className="px-2 mt-4">
+                <Button className="w-full bg-primary-red text-white hover:bg-primary-red/90 rounded-xl py-6 text-lg shadow-lg shadow-primary-red/10">
+                  Shop Collection
                 </Button>
               </div>
-            </SheetContent>
-          </Sheet>
+            </div>
+          </SheetContent>
+        </Sheet>
 
         {/* Desktop Navigation - Centered */}
-        <nav className="hidden md:flex items-center space-x-2 mx-auto bg-gray-100/50 p-1 rounded-full border border-gray-200/50 backdrop-blur-sm">
+        <nav className="hidden md:flex items-center space-x-1 mx-auto bg-white/60 p-1.5 rounded-full border border-white/40 shadow-sm backdrop-blur-md hover:shadow-md transition-shadow duration-300">
           {navLinks.map((link) => (
             <Link
               key={link.name}
               href={link.href}
               className={cn(
-                "px-5 py-2 rounded-full text-sm font-medium transition-all duration-300",
-                pathname === link.href 
-                  ? "bg-white text-primary-red shadow-sm scale-105" 
-                  : "text-secondary-charcoal hover:bg-white/50 hover:text-primary-red"
+                "px-6 py-2.5 rounded-full text-sm font-semibold tracking-wide transition-all duration-300 relative overflow-hidden group",
+                pathname === link.href
+                  ? "bg-primary-red text-white shadow-md shadow-primary-red/20 transform scale-105"
+                  : "text-secondary-charcoal/80 hover:text-primary-red hover:bg-primary-red/5"
               )}
             >
-              {link.name}
+              <span className="relative z-10">{link.name}</span>
             </Link>
           ))}
         </nav>
 
         {/* Utilities */}
-        <div className="flex items-center space-x-2 sm:space-x-3 md:absolute md:right-8">
-          <button 
-             onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-             className="p-2 rounded-full hover:bg-gray-100 text-secondary-charcoal transition-colors"
+        <div className="flex items-center space-x-3 md:absolute md:right-8">
+          <button
+            onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+            className="p-2.5 rounded-full hover:bg-white/50 text-secondary-charcoal transition-colors focus:outline-none backdrop-blur-sm"
+            aria-label="Toggle theme"
           >
-            {theme === "dark" ? <Sun size={18} /> : <Moon size={18} />}
+            {theme === "dark" ? <Sun size={20} /> : <Moon size={20} />}
           </button>
 
-          <Button className="hidden md:flex bg-primary-gold text-secondary-charcoal hover:bg-primary-gold/90 rounded-full px-6 text-sm font-semibold shadow-md hover:shadow-lg transition-all">
+          <Button className="hidden md:flex bg-primary-red text-white hover:bg-rose-800 rounded-full px-7 py-5 text-sm font-bold tracking-wide shadow-lg shadow-primary-red/20 hover:shadow-primary-red/40 transition-all transform hover:-translate-y-0.5 btn-liquid border-none">
             Shop Now
           </Button>
         </div>

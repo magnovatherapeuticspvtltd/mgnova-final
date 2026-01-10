@@ -5,20 +5,26 @@
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 0 0% 20%;
+    --foreground: 0 0% 15%; /* Slightly darker for better readability */
 
-    --primary-red: 350 75% 45%;
-    --primary-green: 120 60% 34%;
-    --primary-gold: 50 100% 50%;
-    --primary-cream: 48 100% 93%;
+    /* New "Medical Luxury" Palette */
+    /* Deep Burgundy - Primary Brand Color */
+    --primary-red: 350 80% 35%; 
+    /* Forest Green - Relegated to Accents/Nature */
+    --primary-green: 140 40% 40%; 
+    /* Champagne Gold - Luxury Accent */
+    --primary-gold: 45 60% 60%; 
+    /* Off-white Cream - Backgrounds */
+    --primary-cream: 40 30% 96%;
 
-    --secondary-beige: 39 77% 83%;
-    --secondary-peach: 28 100% 86%;
+    /* Secondary / UI Colors */
+    --secondary-beige: 35 20% 90%;
+    --secondary-peach: 20 50% 94%;
     --secondary-white: 0 0% 100%;
-    --secondary-charcoal: 0 0% 20%;
+    --secondary-charcoal: 220 10% 12%; /* Rich charcoal */
 
     --card: 0 0% 100%;
-    --card-foreground: 0 0% 20%;
+    --card-foreground: 220 10% 12%;
 
     --border: 0 0% 90%;
     --input: 0 0% 90%;
@@ -26,37 +32,37 @@
     --muted: 0 0% 96%;
     --muted-foreground: 0 0% 45%;
 
-    --accent: 50 100% 50%;
-    --accent-foreground: 0 0% 20%;
+    --accent: 45 60% 60%; /* Gold as accent */
+    --accent-foreground: 220 10% 12%;
 
-    --destructive: 0 100% 50%;
-    --destructive-foreground: 0 0% 100%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
 
-    --ring: 350 75% 45%;
+    --ring: 350 80% 35%;
 
     --radius: 0.5rem;
   }
 
   .dark {
-    --background: 0 0% 10%;
-    --foreground: 0 0% 95%;
+    --background: 220 10% 10%;
+    --foreground: 40 30% 96%;
 
-    --card: 0 0% 15%;
-    --card-foreground: 0 0% 95%;
+    --card: 220 10% 13%;
+    --card-foreground: 40 30% 96%;
 
-    --border: 0 0% 20%;
-    --input: 0 0% 20%;
+    --border: 220 10% 20%;
+    --input: 220 10% 20%;
 
-    --muted: 0 0% 20%;
-    --muted-foreground: 0 0% 70%;
+    --muted: 220 10% 20%;
+    --muted-foreground: 220 10% 65%;
 
-    --accent: 50 70% 45%;
-    --accent-foreground: 0 0% 10%;
+    --accent: 45 50% 50%;
+    --accent-foreground: 220 10% 10%;
 
-    --destructive: 0 100% 50%;
-    --destructive-foreground: 0 0% 100%;
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 0 0% 98%;
 
-    --ring: 350 75% 45%;
+    --ring: 350 80% 35%;
   }
 }
 
@@ -75,7 +81,7 @@
   h5,
   h6 {
     font-family: var(--font-montserrat), sans-serif;
-    @apply font-bold;
+    @apply font-bold tracking-tight text-secondary-charcoal; 
   }
   .font-playfair {
     font-family: var(--font-playfair), serif;
@@ -83,8 +89,18 @@
 
   /* Custom gradient line */
   .gradient-line {
-    height: 4px;
-    background: linear-gradient(90deg, hsl(var(--primary-red)) 0%, hsl(var(--primary-green)) 100%);
+    height: 3px;
+    background: linear-gradient(90deg, transparent 0%, hsl(var(--primary-red)) 50%, transparent 100%);
+  }
+
+  /* Mesh Gradient Background */
+  .bg-gradient-mesh {
+    background-color: hsla(var(--primary-cream), 0.5);
+    background-image: 
+      radial-gradient(at 0% 0%, hsla(var(--primary-gold), 0.15) 0px, transparent 50%),
+      radial-gradient(at 100% 0%, hsla(var(--primary-red), 0.05) 0px, transparent 50%),
+      radial-gradient(at 100% 100%, hsla(var(--primary-green), 0.05) 0px, transparent 50%),
+      radial-gradient(at 0% 100%, hsla(var(--secondary-peach), 0.1) 0px, transparent 50%);
   }
 
   /* Circular patterns */
@@ -97,17 +113,68 @@
     width: 300px;
     height: 300px;
     border-radius: 50%;
-    border: 2px solid rgba(194, 30, 58, 0.1);
+    border: 1px solid rgba(194, 30, 58, 0.08); /* Thinner border */
     z-index: -1;
   }
 
-  /* Leaf motif */
+  /* Leaf motif utility */
   .leaf-divider {
-    height: 40px;
+    height: 32px;
     background-image: url("/leaf-divider.svg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
-    opacity: 0.2;
+    opacity: 0.15;
+  }
+}
+
+@layer utilities {
+  /* Liquid Hover Effect */
+  .btn-liquid {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    z-index: 1;
+  }
+  .btn-liquid::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: currentColor;
+    border-radius: inherit;
+    z-index: -2;
+    transform: scaleX(0); 
+    transform-origin: bottom right;
+    transition: transform 0.4s ease-out;
+    opacity: 0.1;
+  }
+  .btn-liquid:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+  
+  /* Scroll Reveal Animation Classes */
+  .reveal-on-scroll {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  }
+  .reveal-on-scroll.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  /* Text Unblur Reveal */
+  .text-reveal {
+    filter: blur(8px);
+    opacity: 0;
+    transition: filter 1s ease, opacity 1s ease;
+  }
+  .text-reveal.is-visible {
+    filter: blur(0);
+    opacity: 1;
   }
 }
