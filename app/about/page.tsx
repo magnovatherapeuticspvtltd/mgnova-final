@@ -33,7 +33,7 @@ export default function AboutPage() {
                   What sets us apart is our commitment to scientific research and evidence-based formulations. We believe that truly effective skincare must be rooted in rigorous science and validated through clinical testing.
                 </p>
                 <p>
-                  Today, we're proud to offer our breakthrough LuxGlow Brightening Serum, with more innovative products in development. Our dedication to quality, efficacy, and safety remains unwavering as we continue to advance the field of dermatological skincare.
+                  Today, we're proud to offer our breakthrough LuxGlow Brightening Cream, with more innovative products in development. Our dedication to quality, efficacy, and safety remains unwavering as we continue to advance the field of dermatological skincare.
                 </p>
               </div>
 
@@ -199,7 +199,7 @@ export default function AboutPage() {
                     <h3 className="text-xl font-bold text-primary-green">2025</h3>
                     <h4 className="font-medium text-secondary-charcoal">LuxGlow Launch</h4>
                     <p className="text-sm text-muted-foreground">
-                      Successfully launched our flagship LuxGlow Brightening Serum following successful clinical validation.
+                      Successfully launched our flagship LuxGlow Brightening Cream following successful clinical validation.
                     </p>
                   </div>
                 </div>

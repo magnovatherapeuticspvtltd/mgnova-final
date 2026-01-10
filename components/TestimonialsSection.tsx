@@ -24,7 +24,7 @@ const testimonials: Testimonial[] = [
     age: 34,
     location: "New York",
     quote:
-      "After struggling with hyperpigmentation for years, LuxGlow's Brightening Serum has made a remarkable difference in just 8 weeks. My skin tone is more even, and dark spots have significantly faded.",
+      "After struggling with hyperpigmentation for years, LuxGlow's Brightening Cream has made a remarkable difference in just 8 weeks. My skin tone is more even, and dark spots have significantly faded.",
     beforeImage: "/placeholder.svg?height=300&width=250",
     afterImage: "/placeholder.svg?height=300&width=250",
   },

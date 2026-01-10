@@ -19,10 +19,10 @@ export default function TestimonialsPage() {
           </p>
         </div>
       </section>
-      
+
       {/* Main Testimonials Section */}
       <TestimonialsSection />
-      
+
       {/* Featured Testimonials Section */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
@@ -32,13 +32,13 @@ export default function TestimonialsPage() {
               These remarkable skin transformations highlight the effectiveness of our skincare solutions.
             </p>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {[
               {
                 name: "Rebecca T., 35",
                 title: "Hyperpigmentation Journey",
-                quote: "After years of struggling with dark spots from sun damage, I finally found a solution that actually works. LuxGlow's Brightening Serum has transformed my skin in just 10 weeks of consistent use.",
+                quote: "After years of struggling with dark spots from sun damage, I finally found a solution that actually works. LuxGlow's Brightening Cream has transformed my skin in just 10 weeks of consistent use.",
                 stars: 5
               },
               {
@@ -50,7 +50,7 @@ export default function TestimonialsPage() {
               {
                 name: "Jasmine K., 28",
                 title: "Acne Scarring Improvement",
-                quote: "The post-acne marks that I've struggled with for years have significantly faded since using the Brightening Serum. I'm finally comfortable going makeup-free and my confidence has soared!",
+                quote: "The post-acne marks that I've struggled with for years have significantly faded since using the Brightening Cream. I'm finally comfortable going makeup-free and my confidence has soared!",
                 stars: 5
               },
               {
@@ -79,7 +79,7 @@ export default function TestimonialsPage() {
           </div>
         </div>
       </section>
-      
+
       {/* Video Testimonials Section */}
       <section className="py-16 bg-secondary-beige/30">
         <div className="container mx-auto px-4">
@@ -89,7 +89,7 @@ export default function TestimonialsPage() {
               Hear directly from our customers about their experiences with our products.
             </p>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[1, 2, 3].map((_, index) => (
               <div key={index} className="bg-white rounded-lg shadow-sm overflow-hidden">
@@ -113,7 +113,7 @@ export default function TestimonialsPage() {
               </div>
             ))}
           </div>
-          
+
           <div className="mt-12 text-center">
             <Link href="/contact">
               <Button className="bg-primary-gold text-secondary-charcoal hover:bg-primary-gold/90">

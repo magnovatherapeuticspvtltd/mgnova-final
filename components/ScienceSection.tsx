@@ -7,7 +7,7 @@ const ScienceSection = () => {
 
     const stats = [
         { label: "Clinical Efficacy", value: "94", suffix: "%", description: "Participants saw brighter skin in 4 weeks" },
-        { label: "Active Absorption", value: "3.5", suffix: "x", description: "Better penetration than standard serums" },
+        { label: "Active Absorption", value: "3.5", suffix: "x", description: "Better penetration than standard creams" },
         { label: "Natural Origin", value: "88", suffix: "%", description: "Ingredients derived from sustainable sources" },
     ]
 

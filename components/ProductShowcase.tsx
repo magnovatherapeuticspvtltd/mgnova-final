@@ -20,8 +20,8 @@ interface Product {
 
 const featuredProduct: Product = {
   id: 1,
-  name: "LuxGlow Brightening Serum",
-  category: "Serum",
+  name: "LuxGlow Brightening Cream",
+  category: "Cream",
   description: "Advanced formula with vitamin C and niacinamide for brighter, more even skin tone. Our best-selling product designed to transform dull skin and reduce hyperpigmentation with consistent use.",
   featured: true,
   image: "/product.svg",
