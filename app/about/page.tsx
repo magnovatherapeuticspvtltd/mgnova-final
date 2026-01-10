@@ -27,7 +27,7 @@ export default function AboutPage() {
               <h2 className="text-3xl font-bold text-secondary-charcoal mb-6">Our Story</h2>
               <div className="space-y-4 text-muted-foreground">
                 <p>
-                  Founded in 2018, Magnova Therapeutics began with a simple mission: to transform skincare through science and innovation. Our team of dermatologists, biochemists, and skincare enthusiasts came together with a shared vision of creating products that deliver real, visible results.
+                  Founded in 2023, Magnova Therapeutics began with a simple mission: to transform skincare through science and innovation. Our team of dermatologists, biochemists, and skincare enthusiasts came together with a shared vision of creating products that deliver real, visible results.
                 </p>
                 <p>
                   What sets us apart is our commitment to scientific research and evidence-based formulations. We believe that truly effective skincare must be rooted in rigorous science and validated through clinical testing.
@@ -174,7 +174,7 @@ export default function AboutPage() {
                 <div className="relative">
                   <div className="absolute left-0 md:left-1/2 top-6 w-5 h-5 rounded-full bg-primary-green transform -translate-x-1/2"></div>
                   <div className="md:w-1/2 pl-10 md:pl-0 md:pr-12 text-left md:text-right">
-                    <h3 className="text-xl font-bold text-primary-green">2018</h3>
+                    <h3 className="text-xl font-bold text-primary-green">2023</h3>
                     <h4 className="font-medium text-secondary-charcoal">Company Founded</h4>
                     <p className="text-sm text-muted-foreground">
                       Magnova Therapeutics was established with a mission to revolutionize skincare through scientific innovation.
@@ -185,10 +185,10 @@ export default function AboutPage() {
                 <div className="relative">
                   <div className="absolute left-0 md:left-1/2 top-6 w-5 h-5 rounded-full bg-primary-green transform -translate-x-1/2"></div>
                   <div className="md:w-1/2 md:ml-auto pl-10 md:pl-12">
-                    <h3 className="text-xl font-bold text-primary-green">2019</h3>
-                    <h4 className="font-medium text-secondary-charcoal">Research Partnership</h4>
+                    <h3 className="text-xl font-bold text-primary-green">2024</h3>
+                    <h4 className="font-medium text-secondary-charcoal">Research & Development</h4>
                     <p className="text-sm text-muted-foreground">
-                      Formed key research partnerships with leading dermatological institutions to advance our formulation technologies.
+                      Developed our proprietary lipid-delivery system and formed partnerships with key dermatological institutions.
                     </p>
                   </div>
                 </div>
@@ -196,32 +196,10 @@ export default function AboutPage() {
                 <div className="relative">
                   <div className="absolute left-0 md:left-1/2 top-6 w-5 h-5 rounded-full bg-primary-green transform -translate-x-1/2"></div>
                   <div className="md:w-1/2 pl-10 md:pl-0 md:pr-12 text-left md:text-right">
-                    <h3 className="text-xl font-bold text-primary-green">2020</h3>
-                    <h4 className="font-medium text-secondary-charcoal">Breakthrough Discovery</h4>
-                    <p className="text-sm text-muted-foreground">
-                      Our team developed a proprietary delivery system that significantly enhances the efficacy of brightening ingredients.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="relative">
-                  <div className="absolute left-0 md:left-1/2 top-6 w-5 h-5 rounded-full bg-primary-green transform -translate-x-1/2"></div>
-                  <div className="md:w-1/2 md:ml-auto pl-10 md:pl-12">
-                    <h3 className="text-xl font-bold text-primary-green">2022</h3>
-                    <h4 className="font-medium text-secondary-charcoal">Clinical Trial Success</h4>
-                    <p className="text-sm text-muted-foreground">
-                      Completed extensive clinical trials demonstrating the safety and effectiveness of our brightening formulation.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="relative">
-                  <div className="absolute left-0 md:left-1/2 top-6 w-5 h-5 rounded-full bg-primary-green transform -translate-x-1/2"></div>
-                  <div className="md:w-1/2 pl-10 md:pl-0 md:pr-12 text-left md:text-right">
-                    <h3 className="text-xl font-bold text-primary-green">2023</h3>
+                    <h3 className="text-xl font-bold text-primary-green">2025</h3>
                     <h4 className="font-medium text-secondary-charcoal">LuxGlow Launch</h4>
                     <p className="text-sm text-muted-foreground">
-                      Successfully launched our flagship LuxGlow Brightening Serum to critical acclaim from dermatologists and customers.
+                      Successfully launched our flagship LuxGlow Brightening Serum following successful clinical validation.
                     </p>
                   </div>
                 </div>
@@ -229,7 +207,7 @@ export default function AboutPage() {
                 <div className="relative">
                   <div className="absolute left-0 md:left-1/2 top-6 w-5 h-5 rounded-full bg-primary-red transform -translate-x-1/2"></div>
                   <div className="md:w-1/2 md:ml-auto pl-10 md:pl-12">
-                    <h3 className="text-xl font-bold text-primary-red">2025</h3>
+                    <h3 className="text-xl font-bold text-primary-red">2026</h3>
                     <h4 className="font-medium text-secondary-charcoal">Expanding Horizons</h4>
                     <p className="text-sm text-muted-foreground">
                       Currently developing an expanded product line targeting additional skin concerns while continuing to advance our research.
