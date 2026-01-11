@@ -5,15 +5,16 @@
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 0 0% 15%; /* Slightly darker for better readability */
+    --foreground: 0 0% 15%;
+    /* Slightly darker for better readability */
 
     /* New "Medical Luxury" Palette */
     /* Deep Burgundy - Primary Brand Color */
-    --primary-red: 350 80% 35%; 
+    --primary-red: 350 80% 35%;
     /* Forest Green - Relegated to Accents/Nature */
-    --primary-green: 140 40% 40%; 
+    --primary-green: 140 40% 40%;
     /* Champagne Gold - Luxury Accent */
-    --primary-gold: 45 60% 60%; 
+    --primary-gold: 45 60% 60%;
     /* Off-white Cream - Backgrounds */
     --primary-cream: 40 30% 96%;
 
@@ -21,7 +22,8 @@
     --secondary-beige: 35 20% 90%;
     --secondary-peach: 20 50% 94%;
     --secondary-white: 0 0% 100%;
-    --secondary-charcoal: 220 10% 12%; /* Rich charcoal */
+    --secondary-charcoal: 220 10% 12%;
+    /* Rich charcoal */
 
     --card: 0 0% 100%;
     --card-foreground: 220 10% 12%;
@@ -32,7 +34,8 @@
     --muted: 0 0% 96%;
     --muted-foreground: 0 0% 45%;
 
-    --accent: 45 60% 60%; /* Gold as accent */
+    --accent: 45 60% 60%;
+    /* Gold as accent */
     --accent-foreground: 220 10% 12%;
 
     --destructive: 0 84% 60%;
@@ -70,10 +73,12 @@
   * {
     @apply border-border;
   }
+
   body {
     @apply bg-background text-foreground;
     font-family: var(--font-open-sans), sans-serif;
   }
+
   h1,
   h2,
   h3,
@@ -81,8 +86,9 @@
   h5,
   h6 {
     font-family: var(--font-montserrat), sans-serif;
-    @apply font-bold tracking-tight text-secondary-charcoal; 
+    @apply font-bold tracking-tight text-secondary-charcoal;
   }
+
   .font-playfair {
     font-family: var(--font-playfair), serif;
   }
@@ -96,7 +102,7 @@
   /* Mesh Gradient Background */
   .bg-gradient-mesh {
     background-color: hsla(var(--primary-cream), 0.5);
-    background-image: 
+    background-image:
       radial-gradient(at 0% 0%, hsla(var(--primary-gold), 0.15) 0px, transparent 50%),
       radial-gradient(at 100% 0%, hsla(var(--primary-red), 0.05) 0px, transparent 50%),
       radial-gradient(at 100% 100%, hsla(var(--primary-green), 0.05) 0px, transparent 50%),
@@ -107,13 +113,15 @@
   .circular-pattern {
     position: relative;
   }
+
   .circular-pattern::before {
     content: "";
     position: absolute;
     width: 300px;
     height: 300px;
     border-radius: 50%;
-    border: 1px solid rgba(194, 30, 58, 0.08); /* Thinner border */
+    border: 1px solid rgba(194, 30, 58, 0.08);
+    /* Thinner border */
     z-index: -1;
   }
 
@@ -129,6 +137,7 @@
 }
 
 @layer utilities {
+
   /* Liquid Hover Effect */
   .btn-liquid {
     position: relative;
@@ -136,6 +145,7 @@
     transition: all 0.3s ease;
     z-index: 1;
   }
+
   .btn-liquid::after {
     content: "";
     position: absolute;
@@ -146,35 +156,56 @@
     background-color: currentColor;
     border-radius: inherit;
     z-index: -2;
-    transform: scaleX(0); 
+    transform: scaleX(0);
     transform-origin: bottom right;
     transition: transform 0.4s ease-out;
     opacity: 0.1;
   }
+
   .btn-liquid:hover::after {
     transform: scaleX(1);
     transform-origin: bottom left;
   }
-  
+
   /* Scroll Reveal Animation Classes */
   .reveal-on-scroll {
     opacity: 0;
     transform: translateY(20px);
     transition: opacity 0.8s ease-out, transform 0.8s ease-out;
   }
+
   .reveal-on-scroll.is-visible {
     opacity: 1;
     transform: translateY(0);
   }
-  
+
   /* Text Unblur Reveal */
   .text-reveal {
     filter: blur(8px);
     opacity: 0;
     transition: filter 1s ease, opacity 1s ease;
   }
+
   .text-reveal.is-visible {
     filter: blur(0);
     opacity: 1;
+  }
+
+  /* Custom Scrollbar */
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+  }
+
+  .custom-scrollbar:hover::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.2);
   }
 }
