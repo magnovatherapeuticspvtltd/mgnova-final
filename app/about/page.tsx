@@ -27,20 +27,20 @@ export default function AboutPage() {
               <h2 className="text-3xl font-bold text-secondary-charcoal mb-6">Our Story</h2>
               <div className="space-y-4 text-muted-foreground">
                 <p>
-                  Founded in 2023, Magnova Therapeutics began with a simple mission: to transform skincare through science and innovation. Our team of dermatologists, biochemists, and skincare enthusiasts came together with a shared vision of creating products that deliver real, visible results.
+                  Founded in 2023, Magnova Therapeutics began with a simple mission: to transform healthcare through science and innovation. Our team of experts came together with a shared vision of creating pharmaceutical formulations that deliver real, visible results for patients.
                 </p>
                 <p>
-                  What sets us apart is our commitment to scientific research and evidence-based formulations. We believe that truly effective skincare must be rooted in rigorous science and validated through clinical testing.
+                  What sets us apart is our commitment to scientific research and evidence-based medicine. We believe that truly effective treatments must be rooted in rigorous science and validated through clinical testing.
                 </p>
                 <p>
-                  Today, we're proud to offer our breakthrough LuxGlow Brightening Cream, with more innovative products in development. Our dedication to quality, efficacy, and safety remains unwavering as we continue to advance the field of dermatological skincare.
+                  Today, we're proud to offer a diverse portfolio of dermatological and gastrointestinal medicines. Our dedication to quality, efficacy, and safety remains unwavering as we continue to advance the field of healthcare.
                 </p>
               </div>
 
               <div className="mt-8">
-                <Link href="/research">
+                <Link href="/contact">
                   <Button className="bg-primary-gold text-secondary-charcoal hover:bg-primary-gold/90">
-                    Our Research <ArrowRight className="h-4 w-4 ml-2" />
+                    Contact Us <ArrowRight className="h-4 w-4 ml-2" />
                   </Button>
                 </Link>
               </div>
@@ -73,13 +73,13 @@ export default function AboutPage() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
             {[
-              "Mrs. Kalindi Devi",
               "Mr. Mrityunjay Rai",
-              "Mr. Alok Sahoo",
-              "Mr. Sanjay Singh",
-              "Mr. Ravi Shankar Singh",
-              "Mrs. Savera Gupta",
-              "Mr. Aditya Singh"
+              "Alok Sahoo",
+              "Ravi Shankar Singh",
+              "Savera Gupta",
+              "Aditya Singh",
+              "Kalindi Devi",
+              "Sanjay Singh"
             ].map((name, index) => (
               <Card key={index} className="text-center hover:shadow-md transition-shadow duration-300 border-gray-100 bg-gray-50/50">
                 <CardContent className="pt-6 pb-6">

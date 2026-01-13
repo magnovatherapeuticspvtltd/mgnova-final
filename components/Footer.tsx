@@ -47,8 +47,6 @@ const Footer = () => {
               {[
                 { name: "About Us", href: "/about" },
                 { name: "Careers", href: "/careers" },
-                { name: "Research", href: "/research" },
-                { name: "Press", href: "/press" },
                 { name: "Contact", href: "/contact" },
               ].map((link) => (
                 <li key={link.name}>
@@ -61,30 +59,37 @@ const Footer = () => {
           </div>
 
           {/* Products/Legal (Span 2) */}
-          <div className="lg:col-span-2">
+          <div className="lg:col-span-3">
             <h3 className="font-playfair text-xl font-bold text-secondary-charcoal mb-6 relative inline-block">
-              Explore
+              Contact Us
               <span className="absolute -bottom-2 left-0 w-1/2 h-0.5 bg-primary-gold/50"></span>
             </h3>
-            <ul className="space-y-3">
-              {[
-                { name: "Shop All", href: "/products" },
-                { name: "Best Sellers", href: "/products?category=best-sellers" },
-                { name: "New Arrivals", href: "/products?category=new" },
-                { name: "Privacy Policy", href: "/privacy" },
-                { name: "Terms of Service", href: "/terms" },
-              ].map((link) => (
-                <li key={link.name}>
-                  <Link href={link.href} className="text-muted-foreground hover:text-primary-red hover:translate-x-1 transition-all duration-200 inline-block">
-                    {link.name}
-                  </Link>
-                </li>
-              ))}
+            <ul className="space-y-4 text-sm text-secondary-charcoal/80">
+              <li className="flex items-start space-x-3">
+                <span className="font-bold text-primary-red shrink-0 mt-0.5">Address:</span>
+                <span className="leading-relaxed">
+                  H49, Phase - 4,<br />
+                  Rapti Nagar, Gorakhpur,<br />
+                  Uttar Pradesh, India
+                </span>
+              </li>
+              <li className="flex flex-col space-y-1">
+                <span className="font-bold text-primary-red">Email:</span>
+                <a href="mailto:Magnovatherapeuticspvtltd@gmail.com" className="hover:text-primary-red transition-colors break-all">Magnovatherapeuticspvtltd@gmail.com</a>
+                <a href="mailto:info@magnovatherapeutics.com" className="hover:text-primary-red transition-colors">info@magnovatherapeutics.com</a>
+              </li>
+              <li className="flex flex-col space-y-1">
+                <span className="font-bold text-primary-red">Mobile:</span>
+                <div>
+                  <a href="tel:9118457314" className="hover:text-primary-red transition-colors block">+91 91184 57314</a>
+                  <a href="tel:9005952582" className="hover:text-primary-red transition-colors block">+91 900-595-2582</a>
+                </div>
+              </li>
             </ul>
           </div>
 
-          {/* Newsletter (Span 4) */}
-          <div className="lg:col-span-4 lg:pl-8">
+          {/* Newsletter (Span 3) */}
+          <div className="lg:col-span-3 lg:pl-4">
             <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
               <h3 className="font-playfair text-xl font-bold text-secondary-charcoal mb-2">Join the Inner Circle</h3>
               <p className="text-muted-foreground text-sm mb-4">

@@ -3,148 +3,154 @@
 import { useState } from "react"
 import { motion } from "framer-motion"
 import Image from "next/image"
+import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
-import { Star } from "lucide-react"
 
 interface Product {
   id: number
   name: string
   category: string
   description: string
-  featured: boolean
   image: string
-  ingredients: string[]
+  composition: string
+  form: string
   benefits: string[]
 }
 
-const featuredProduct: Product = {
-  id: 1,
-  name: "LuxGlow Brightening Cream",
-  category: "Cream",
-  description: "Advanced formula with vitamin C and niacinamide for brighter, more even skin tone. Our best-selling product designed to transform dull skin and reduce hyperpigmentation with consistent use.",
-  featured: true,
-  image: "/product.svg",
-  ingredients: ["Vitamin C", "Niacinamide", "Hyaluronic Acid", "Licorice Extract"],
-  benefits: ["Brightens skin", "Reduces dark spots", "Evens skin tone", "Hydrates"],
-}
+const products: Product[] = [
+  {
+    id: 1,
+    name: "LUXGLO Skin Brightening Cream",
+    category: "Dermatology & Skincare",
+    description: "LUXGLO is a premium skin brightening cream designed to restore your skin's natural radiance. It combines a powerful blend of active ingredients including Kojic Dipalmitate and Niacinamide to target uneven skin tone and pigmentation.",
+    image: "/luxglo.jpg",
+    composition: "Kojic Dipalmitate, Niacinamide, 4-Butylresorcinol, Mandelic Acid, Licorice Extract.",
+    form: "Cream",
+    benefits: ["Helps reduce the appearance of dark spots and hyperpigmentation.", "Promotes a brighter, more even complexion.", "Enriched with Mandelic Acid for gentle exfoliation."],
+  },
+  {
+    id: 2,
+    name: "Cerafly Cream (Cerafly Bariera)",
+    category: "Dermatology & Skincare",
+    description: "Cerafly is a gentle, soothing moisturizer designed to hydrate and protect dry, sensitive skin. It creates a protective barrier that locks in moisture, making it ideal for managing dry skin conditions.",
+    image: "/cerafly.jpg",
+    composition: "White Soft Paraffin and Light Liquid Paraffin.",
+    form: "Cream",
+    benefits: ["Deeply hydrates and softens dry skin.", "Forms a protective layer to prevent moisture loss.", "Paraben-free formulation suitable for sensitive skin."],
+  },
+  {
+    id: 3,
+    name: "MELIFRO Cream",
+    category: "Dermatology & Skincare",
+    description: "MELIFRO provides high-strength support for managing skin pigmentation. Formulated with Hydroquinone, it is designed to treat conditions related to hyperpigmentation and melanin overproduction.",
+    image: "/melifro.jpg",
+    composition: "Hydroquinone Cream USP 4% w/w.",
+    form: "Cream (15 gm)",
+    benefits: ["Effective management of melasma and dark patches.", "Helps lighten hyperpigmented skin areas."],
+  },
+  {
+    id: 4,
+    name: "COBISTA-S Ointment",
+    category: "Dermatological Treatments",
+    description: "COBISTA-S is a specialized formulation combining the anti-inflammatory power of Clobetasol with the exfoliating properties of Salicylic Acid. It is typically used for managing inflammatory skin conditions associated with scaling.",
+    image: "/cobista.jpg",
+    composition: "Clobetasol Propionate and Salicylic Acid.",
+    form: "Ointment",
+    benefits: ["Reduces redness, itching, and swelling.", "Softens and removes scaling skin."],
+  },
+  {
+    id: 5,
+    name: "ZEKUTA-K Cream",
+    category: "Dermatological Treatments",
+    description: "ZEKUTA-K is a broad-spectrum antifungal cream containing Ketoconazole. It is effectively used to treat various fungal skin infections, providing relief from itching and irritation.",
+    image: "/zekuta-k.jpg",
+    composition: "Ketoconazole Cream 2% w/w.",
+    form: "Cream",
+    benefits: ["Treats fungal infections of the skin.", "Relieves itching and discomfort."],
+  },
+  {
+    id: 6,
+    name: "ZEKUTA 130 / ZEKUTA 100",
+    category: "Systemic Anti-Fungal Support",
+    description: "ZEKUTA capsules feature a Supra Bioavailable Formulation of Itraconazole, ensuring enhanced absorption for the effective management of fungal infections.",
+    image: "/zekuta-130.jpg",
+    composition: "Itraconazole IP 130 mg / 100 mg (Supra Bioavailable Formulation).",
+    form: "Capsules",
+    benefits: ["High bioavailability for better efficacy.", "Effective against a wide range of fungal pathogens."],
+  },
+  {
+    id: 7,
+    name: "Raviret-D",
+    category: "Gastrointestinal Care",
+    description: "Raviret-D combines a proton pump inhibitor with a prokinetic agent to provide comprehensive relief from gastrointestinal disorders. It is designed to manage acidity and reflux symptoms effectively.",
+    image: "/raviret.jpg",
+    composition: "Enteric-coated Rabeprazole Sodium & Sustained-release Domperidone.",
+    form: "Capsules (10x10 pack)",
+    benefits: ["Reduces stomach acid production.", "Relieves symptoms of GERD and acid reflux.", "Prevents nausea and bloating."],
+  },
+]
 
 const ProductShowcase = () => {
-  const [activeTab, setActiveTab] = useState<'ingredients' | 'benefits'>('ingredients');
-
   return (
-    <section className="py-10 sm:py-16 bg-secondary-beige/30">
+    <section className="py-16 sm:py-24 bg-secondary-beige/30" id="products">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-8 sm:mb-12">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-secondary-charcoal mb-2 sm:mb-4">Our Signature Product</h2>
-          <p className="text-sm sm:text-base text-muted-foreground max-w-2xl mx-auto">
-            Experience our best-selling skincare solution designed to address hyperpigmentation and promote radiant skin.
+        <div className="text-center mb-16">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-secondary-charcoal mb-4">Our Medicines</h2>
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            High-quality pharmaceutical formulations researched and developed for better health.
           </p>
         </div>
 
-        <div className="max-w-5xl mx-auto">
-          <div className="bg-white rounded-lg shadow-md overflow-hidden">
-            <div className="flex flex-col md:flex-row">
-              {/* Product Image - Left side on desktop, top on mobile */}
-              <div className="md:w-1/2 relative h-[300px] md:h-[450px] bg-secondary-white">
-                <div className="absolute top-3 left-3 bg-primary-gold text-secondary-charcoal text-xs font-bold uppercase tracking-widest px-4 py-2 rounded-full z-10 shadow-sm">
-                  Best Seller
-                </div>
-                <motion.div
-                  whileHover={{ y: -10, scale: 1.02 }}
-                  transition={{ duration: 0.4, ease: "easeOut" }}
-                  className="w-full h-full relative"
-                >
-                  <Image
-                    src={featuredProduct.image}
-                    alt={featuredProduct.name}
-                    fill
-                    sizes="(max-width: 768px) 100vw, 50vw"
-                    className="object-contain p-6 drop-shadow-xl"
-                    priority
-                  />
-                </motion.div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {products.map((product) => (
+            <div key={product.id} className="bg-white rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden border border-gray-100 flex flex-col">
+              <div className="relative h-64 bg-gray-50 flex items-center justify-center p-6">
+                <Image
+                  src={product.image}
+                  alt={product.name}
+                  fill
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                  className="object-contain hover:scale-105 transition-transform duration-500"
+                />
               </div>
 
-              {/* Product Details - Right side on desktop, bottom on mobile */}
-              <div className="md:w-1/2 p-5 sm:p-8">
-                <div className="flex flex-col h-full">
-                  <div>
-                    <div className="text-sm text-primary-red font-medium mb-1">{featuredProduct.category}</div>
-                    <h3 className="font-heading text-xl sm:text-2xl font-semibold mb-2">{featuredProduct.name}</h3>
+              <div className="p-6 flex-1 flex flex-col">
+                <div className="mb-4">
+                  <span className="text-xs font-bold tracking-wider text-primary-red uppercase bg-primary-red/5 px-2 py-1 rounded-full">
+                    {product.category}
+                  </span>
+                </div>
 
-                    <div className="flex items-center mb-3">
-                      {Array(5).fill(0).map((_, i) => (
-                        <Star key={i} size={16} className="text-primary-gold fill-primary-gold" />
-                      ))}
-                      <span className="ml-2 text-sm text-muted-foreground">(128 reviews)</span>
-                    </div>
+                <h3 className="text-xl font-bold text-secondary-charcoal mb-2 leading-tight">
+                  {product.name}
+                </h3>
 
-                    <p className="text-muted-foreground mb-6">{featuredProduct.description}</p>
+                <div className="text-sm font-medium text-gray-500 mb-4">
+                  {product.composition}
+                </div>
 
-                    {/* Tabs for ingredients and benefits */}
-                    <div className="mb-6">
-                      <div className="flex border-b">
-                        <button
-                          className={cn(
-                            "pb-2 px-4 text-sm font-medium border-b-2 -mb-px",
-                            activeTab === 'ingredients'
-                              ? "border-primary-red text-primary-red"
-                              : "border-transparent hover:text-primary-red/70"
-                          )}
-                          onClick={() => setActiveTab('ingredients')}
-                        >
-                          Key Ingredients
-                        </button>
-                        <button
-                          className={cn(
-                            "pb-2 px-4 text-sm font-medium border-b-2 -mb-px",
-                            activeTab === 'benefits'
-                              ? "border-primary-red text-primary-red"
-                              : "border-transparent hover:text-primary-red/70"
-                          )}
-                          onClick={() => setActiveTab('benefits')}
-                        >
-                          Benefits
-                        </button>
-                      </div>
+                <p className="text-gray-600 text-sm mb-6 flex-1">
+                  {product.description}
+                </p>
 
-                      <div className="pt-4">
-                        {activeTab === 'ingredients' ? (
-                          <div className="flex flex-wrap gap-2">
-                            {featuredProduct.ingredients.map((ingredient, idx) => (
-                              <span key={idx} className="text-sm bg-secondary-beige/50 px-3 py-1.5 rounded-full">
-                                {ingredient}
-                              </span>
-                            ))}
-                          </div>
-                        ) : (
-                          <ul className="space-y-2 pl-5 list-disc">
-                            {featuredProduct.benefits.map((benefit, idx) => (
-                              <li key={idx} className="text-sm text-secondary-charcoal">
-                                {benefit}
-                              </li>
-                            ))}
-                          </ul>
-                        )}
-                      </div>
-                    </div>
-                  </div>
+                <div className="space-y-3 pt-4 border-t border-gray-100 mt-auto">
+                  <div className="text-sm font-semibold text-secondary-charcoal">Key Benefits:</div>
+                  <ul className="text-sm text-gray-500 list-disc pl-4 space-y-1">
+                    {product.benefits.slice(0, 2).map((benefit, idx) => (
+                      <li key={idx}>{benefit}</li>
+                    ))}
+                  </ul>
+                </div>
 
-                  <div className="mt-auto">
-                    <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
-                      <Button className="bg-primary-red text-white hover:bg-primary-red/90 sm:flex-1">
-                        Add to Cart
-                      </Button>
-                      <Button variant="outline" className="border-primary-green text-primary-green hover:bg-primary-green/10 sm:flex-1">
-                        Learn More
-                      </Button>
-                    </div>
-                  </div>
+                <div className="mt-6">
+                  <Button className="w-full bg-secondary-charcoal text-white hover:bg-black transition-colors">
+                    Contact for Inquiry
+                  </Button>
                 </div>
               </div>
             </div>
-          </div>
+          ))}
         </div>
       </div>
     </section>

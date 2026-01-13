@@ -25,9 +25,9 @@ const playfair = Playfair_Display({
 })
 
 export const metadata: Metadata = {
-  title: "Magnova Therapeutics & LuxGlow - Healthy Skin Matters",
-  description: "Professional skincare solutions backed by science and research for healthier, brighter skin.",
-    generator: 'v0.dev'
+  title: "Magnova Therapeutics - Healthy Skin Matters",
+  description: "Magnova Therapeutics - Vision for better health and well-being of every Indian. Specialized in Dermatology & Skincare, Dermatological Treatments, and Gastrointestinal Care.",
+  generator: 'v0.dev'
 }
 
 export default function RootLayout({

@@ -24,7 +24,7 @@ const HeroSection = () => {
             className="mb-8 md:mb-12"
           >
             <div className="inline-block mb-6 px-4 py-1.5 rounded-full bg-white/60 backdrop-blur-md border border-primary-red/10 text-xs font-semibold tracking-widest text-primary-red uppercase shadow-sm">
-              Advanced Clinical Skincare
+              Advanced Pharmaceutical Research
             </div>
 
             <h1 className="flex flex-col items-center justify-center font-heading font-black tracking-tight leading-none">
@@ -44,9 +44,9 @@ const HeroSection = () => {
             className="max-w-3xl mx-auto mb-12"
           >
             <p className="text-lg sm:text-xl md:text-2xl text-secondary-charcoal/80 leading-relaxed font-light">
-              Where <span className="font-playfair italic font-medium text-primary-red">pharmaceutical precision</span> meets
-              <span className="font-playfair italic font-medium text-primary-gold"> uncompromising luxury</span>.
-              <br className="hidden md:block" /> Formulated for results you can see and feel.
+              Healthy Skin Matters. <br className="hidden md:block" />
+              <span className="font-playfair italic font-medium text-primary-red">With a vision for the better health</span> and
+              <span className="font-playfair italic font-medium text-primary-gold"> well-being of every Indian.</span>
             </p>
           </motion.div>
 
@@ -57,13 +57,13 @@ const HeroSection = () => {
             className="flex flex-col sm:flex-row gap-5"
           >
             <Button className="bg-primary-red text-white hover:bg-primary-red/90 rounded-full px-10 py-7 text-lg shadow-xl shadow-primary-red/25 hover:shadow-2xl hover:scale-105 transition-all duration-300 btn-liquid w-full sm:w-auto">
-              Explore Collection
+              Our Medicines
             </Button>
             <Button
               variant="outline"
               className="border-primary-red/20 text-secondary-charcoal hover:bg-primary-red/5 hover:border-primary-red/40 rounded-full px-10 py-7 text-lg w-full sm:w-auto transition-all duration-300"
             >
-              Our Science
+              Contact Us
             </Button>
           </motion.div>
 
