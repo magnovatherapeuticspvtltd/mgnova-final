@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion"
 import Image from "next/image"
+import Link from "next/link"
 import { Button } from "@/components/ui/button"
 
 const HeroSection = () => {
@@ -56,15 +57,19 @@ const HeroSection = () => {
             transition={{ duration: 0.6, delay: 0.5 }}
             className="flex flex-col sm:flex-row gap-5"
           >
-            <Button className="bg-primary-red text-white hover:bg-primary-red/90 rounded-full px-10 py-7 text-lg shadow-xl shadow-primary-red/25 hover:shadow-2xl hover:scale-105 transition-all duration-300 btn-liquid w-full sm:w-auto">
-              Our Products
-            </Button>
-            <Button
-              variant="outline"
-              className="border-primary-red/20 text-secondary-charcoal hover:bg-primary-red/5 hover:border-primary-red/40 rounded-full px-10 py-7 text-lg w-full sm:w-auto transition-all duration-300"
-            >
-              Contact Us
-            </Button>
+            <Link href="/product">
+              <Button className="bg-primary-red text-white hover:bg-primary-red/90 rounded-full px-10 py-7 text-lg shadow-xl shadow-primary-red/25 hover:shadow-2xl hover:scale-105 transition-all duration-300 btn-liquid w-full sm:w-auto">
+                Our Products
+              </Button>
+            </Link>
+            <Link href="mailto:Magnovatherapeuticspvtltd@gmail.com">
+              <Button
+                variant="outline"
+                className="border-primary-red/20 text-secondary-charcoal hover:bg-primary-red/5 hover:border-primary-red/40 rounded-full px-10 py-7 text-lg w-full sm:w-auto transition-all duration-300"
+              >
+                Contact Us
+              </Button>
+            </Link>
           </motion.div>
 
 
