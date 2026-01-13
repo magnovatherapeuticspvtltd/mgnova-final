@@ -16,6 +16,7 @@ interface Product {
   composition: string
   form: string
   benefits: string[]
+  featured?: boolean
 }
 
 const products: Product[] = [
@@ -28,6 +29,7 @@ const products: Product[] = [
     composition: "Kojic Dipalmitate, Niacinamide, 4-Butylresorcinol, Mandelic Acid, Licorice Extract.",
     form: "Cream",
     benefits: ["Helps reduce the appearance of dark spots and hyperpigmentation.", "Promotes a brighter, more even complexion.", "Enriched with Mandelic Acid for gentle exfoliation."],
+    featured: true,
   },
   {
     id: 2,
@@ -38,6 +40,7 @@ const products: Product[] = [
     composition: "White Soft Paraffin and Light Liquid Paraffin.",
     form: "Cream",
     benefits: ["Deeply hydrates and softens dry skin.", "Forms a protective layer to prevent moisture loss.", "Paraben-free formulation suitable for sensitive skin."],
+    featured: true,
   },
   {
     id: 3,
@@ -48,6 +51,7 @@ const products: Product[] = [
     composition: "Hydroquinone Cream USP 4% w/w.",
     form: "Cream (15 gm)",
     benefits: ["Effective management of melasma and dark patches.", "Helps lighten hyperpigmented skin areas."],
+    featured: true,
   },
   {
     id: 4,
@@ -91,19 +95,21 @@ const products: Product[] = [
   },
 ]
 
-const ProductShowcase = () => {
+const ProductShowcase = ({ featuredOnly = false }: { featuredOnly?: boolean }) => {
+  const displayProducts = featuredOnly ? products.filter((p) => p.featured) : products
+
   return (
     <section className="py-16 sm:py-24 bg-secondary-beige/30" id="products">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-secondary-charcoal mb-4">Our Medicines</h2>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-secondary-charcoal mb-4">Our Products</h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             High-quality pharmaceutical formulations researched and developed for better health.
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {products.map((product) => (
+          {displayProducts.map((product) => (
             <div key={product.id} className="bg-white rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden border border-gray-100 flex flex-col">
               <div className="relative h-64 bg-gray-50 flex items-center justify-center p-6">
                 <Image
@@ -144,9 +150,11 @@ const ProductShowcase = () => {
                 </div>
 
                 <div className="mt-6">
-                  <Button className="w-full bg-secondary-charcoal text-white hover:bg-black transition-colors">
-                    Contact for Inquiry
-                  </Button>
+                  <Link href="mailto:Magnovatherapeuticspvtltd@gmail.com">
+                    <Button className="w-full bg-secondary-charcoal text-white hover:bg-black transition-colors">
+                      Contact for Inquiry
+                    </Button>
+                  </Link>
                 </div>
               </div>
             </div>

@@ -5,6 +5,12 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { CheckCircle2 } from "lucide-react"
+import { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "Our Products",
+  description: "Explore Magnova Therapeutics' portfolio of scientifically formulated medicines including LuxGlow, Cerafly, Melifro, and more.",
+}
 
 export default function ProductPage() {
   return (
@@ -33,7 +39,7 @@ export default function ProductPage() {
           </p>
 
           <div className="flex justify-center">
-            <Link href="/contact">
+            <Link href="mailto:Magnovatherapeuticspvtltd@gmail.com">
               <Button className="bg-primary-red text-white hover:bg-primary-red/90 rounded-full px-8 py-6 text-lg">
                 Contact Us
               </Button>

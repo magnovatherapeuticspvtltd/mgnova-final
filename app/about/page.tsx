@@ -3,6 +3,12 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import Image from "next/image"
 import Link from "next/link"
 import { ArrowRight, Award, Users, BarChart4, GraduationCap, Globe } from "lucide-react"
+import { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "About Us",
+  description: "Learn about Magnova Therapeutics' mission to transform healthcare through science and innovation. Meet our team and discover our story.",
+}
 
 export default function AboutPage() {
   return (
@@ -38,7 +44,7 @@ export default function AboutPage() {
               </div>
 
               <div className="mt-8">
-                <Link href="/contact">
+                <Link href="mailto:Magnovatherapeuticspvtltd@gmail.com">
                   <Button className="bg-primary-gold text-secondary-charcoal hover:bg-primary-gold/90">
                     Contact Us <ArrowRight className="h-4 w-4 ml-2" />
                   </Button>
@@ -49,10 +55,10 @@ export default function AboutPage() {
             <div className="md:w-1/2">
               <div className="relative h-[400px] md:h-[500px] w-full rounded-lg overflow-hidden shadow-md">
                 <Image
-                  src="/placeholder.svg"
-                  alt="Magnova Therapeutics Team"
+                  src="/logo.svg"
+                  alt="Magnova Therapeutics Logo"
                   fill
-                  className="object-cover"
+                  className="object-contain p-8"
                   sizes="(max-width: 768px) 100vw, 50vw"
                 />
               </div>

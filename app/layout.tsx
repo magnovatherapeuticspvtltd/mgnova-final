@@ -25,9 +25,40 @@ const playfair = Playfair_Display({
 })
 
 export const metadata: Metadata = {
-  title: "Magnova Therapeutics - Healthy Skin Matters",
-  description: "Magnova Therapeutics - Vision for better health and well-being of every Indian. Specialized in Dermatology & Skincare, Dermatological Treatments, and Gastrointestinal Care.",
-  generator: 'v0.dev'
+  title: {
+    default: "Magnova Therapeutics - Healthy Skin Matters",
+    template: "%s | Magnova Therapeutics",
+  },
+  description: "Magnova Therapeutics is a leading pharmaceutical company in India specialized in Dermatology & Skincare, dedicated to creating scientifically formulated solutions for better health and well-being.",
+  keywords: ["Magnova Therapeutics", "Dermatology", "Skincare", "Pharmaceuticals", "India", "Skin Brightening", "Fungal Infection", "Gastrointestinal Care", "LuxGlow", "Cerafly", "Melifro"],
+  authors: [{ name: "Magnova Therapeutics" }],
+  creator: "Magnova Therapeutics",
+  openGraph: {
+    type: "website",
+    locale: "en_IN",
+    url: "https://magnovatherapeutics.com",
+    title: "Magnova Therapeutics - Healthy Skin Matters",
+    description: "Pioneering scientific skincare solutions for healthier, more radiant skin. Explore our range of dermatological and gastrointestinal medicines.",
+    siteName: "Magnova Therapeutics",
+    images: [
+      {
+        url: "/logo.svg", // Ideally this should be an absolute URL to an OG image
+        width: 1200,
+        height: 630,
+        alt: "Magnova Therapeutics",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Magnova Therapeutics - Healthy Skin Matters",
+    description: "Pioneering scientific skincare solutions for healthier, more radiant skin.",
+    images: ["/logo.svg"], // Ideally this should be an absolute URL
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 }
 
 export default function RootLayout({

@@ -1,6 +1,12 @@
 import SectionWrapper from "@/components/SectionWrapper"
 import ContactForm from "@/components/ContactForm"
 import { Phone, Mail, MapPin } from "lucide-react"
+import { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "Contact Us",
+  description: "Get in touch with Magnova Therapeutics. Contact us via phone, email, or visit our office in Gorakhpur, Uttar Pradesh.",
+}
 
 export default function ContactPage() {
   return (
@@ -18,26 +24,31 @@ export default function ContactPage() {
 
             <div className="space-y-4">
               <div className="flex items-center">
-                <Phone size={20} className="mr-3 text-accent" />
+                <Phone size={20} className="mr-3 text-accent shrink-0" />
                 <div>
                   <p className="font-medium">Phone</p>
-                  <p className="text-gray-700">+91 9711106281</p>
+                  <p className="text-gray-700">91184 57314</p>
+                  <p className="text-gray-700">900-595-2582</p>
                 </div>
               </div>
 
               <div className="flex items-center">
-                <Mail size={20} className="mr-3 text-accent" />
+                <Mail size={20} className="mr-3 text-accent shrink-0" />
                 <div>
                   <p className="font-medium">Email</p>
-                  <p className="text-gray-700">magnovahealthcare@gmail.com</p>
+                  <p className="text-gray-700 break-all">Magnovatherapeuticspvtltd@gmail.com</p>
+                  <p className="text-gray-700 break-all">info@magnovatherapeutics.com</p>
                 </div>
               </div>
 
               <div className="flex items-start">
-                <MapPin size={20} className="mr-3 text-accent mt-1" />
+                <MapPin size={20} className="mr-3 text-accent mt-1 shrink-0" />
                 <div>
                   <p className="font-medium">Address</p>
-                  <p className="text-gray-700">B-104, Prateek Fedora, Sector 61, Noida, UP 201301</p>
+                  <p className="text-gray-700 max-w-xs">
+                    H49, PHASE -4 , RAPTI NAGAR<br />
+                    GORAKHPUR UTTAR PRADESH ,INDIA
+                  </p>
                 </div>
               </div>
             </div>

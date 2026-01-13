@@ -61,29 +61,7 @@ const FeatureSection = () => {
           ))}
         </div>
 
-        <div className="mt-16 bg-secondary-beige/20 rounded-lg p-8">
-          <div className="flex flex-col md:flex-row items-center gap-8">
-            <div className="md:w-1/2">
-              <h3 className="text-2xl font-bold text-primary-red mb-4">Skin Analysis Tool</h3>
-              <p className="text-muted-foreground mb-6">
-                Our advanced skin analysis tool uses AI technology to assess your skin concerns and recommend the
-                perfect products for your unique needs.
-              </p>
-              <Button className="bg-primary-gold text-secondary-charcoal hover:bg-primary-gold/90">
-                Try Skin Analysis
-              </Button>
-            </div>
-            <div className="md:w-1/2">
-              <Image
-                src="/placeholder.svg?height=300&width=500"
-                alt="Skin Analysis Tool"
-                width={500}
-                height={300}
-                className="rounded-lg shadow-md"
-              />
-            </div>
-          </div>
-        </div>
+
       </div>
     </section>
   )

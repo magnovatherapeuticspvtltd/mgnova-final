@@ -38,7 +38,7 @@ const Footer = () => {
           </div>
 
           {/* Quick Links (Span 2) */}
-          <div className="lg:col-span-2 lg:col-start-6">
+          <div className="lg:col-span-2 lg:pl-4">
             <h3 className="font-playfair text-xl font-bold text-secondary-charcoal mb-6 relative inline-block">
               Company
               <span className="absolute -bottom-2 left-0 w-1/2 h-0.5 bg-primary-gold/50"></span>
@@ -66,23 +66,24 @@ const Footer = () => {
             </h3>
             <ul className="space-y-4 text-sm text-secondary-charcoal/80">
               <li className="flex items-start space-x-3">
-                <span className="font-bold text-primary-red shrink-0 mt-0.5">Address:</span>
+                <span className="font-bold text-primary-red shrink-0 w-16">Address:</span>
                 <span className="leading-relaxed">
-                  H49, Phase - 4,<br />
-                  Rapti Nagar, Gorakhpur,<br />
-                  Uttar Pradesh, India
+                  H49, Phase-4, Rapti Nagar,<br />
+                  Gorakhpur, Uttar Pradesh, India
                 </span>
               </li>
-              <li className="flex flex-col space-y-1">
-                <span className="font-bold text-primary-red">Email:</span>
-                <a href="mailto:Magnovatherapeuticspvtltd@gmail.com" className="hover:text-primary-red transition-colors break-all">Magnovatherapeuticspvtltd@gmail.com</a>
-                <a href="mailto:info@magnovatherapeutics.com" className="hover:text-primary-red transition-colors">info@magnovatherapeutics.com</a>
+              <li className="flex items-start space-x-3">
+                <span className="font-bold text-primary-red shrink-0 w-16">Email:</span>
+                <div className="flex flex-col">
+                  <a href="mailto:Magnovatherapeuticspvtltd@gmail.com" className="hover:text-primary-red transition-colors break-all">Magnovatherapeuticspvtltd@gmail.com</a>
+                  <a href="mailto:info@magnovatherapeutics.com" className="hover:text-primary-red transition-colors">info@magnovatherapeutics.com</a>
+                </div>
               </li>
-              <li className="flex flex-col space-y-1">
-                <span className="font-bold text-primary-red">Mobile:</span>
-                <div>
-                  <a href="tel:9118457314" className="hover:text-primary-red transition-colors block">+91 91184 57314</a>
-                  <a href="tel:9005952582" className="hover:text-primary-red transition-colors block">+91 900-595-2582</a>
+              <li className="flex items-start space-x-3">
+                <span className="font-bold text-primary-red shrink-0 w-16">Mobile:</span>
+                <div className="flex flex-col">
+                  <a href="tel:9118457314" className="hover:text-primary-red transition-colors">+91 91184 57314</a>
+                  <a href="tel:9005952582" className="hover:text-primary-red transition-colors">+91 90059 52582</a>
                 </div>
               </li>
             </ul>
@@ -118,10 +119,10 @@ const Footer = () => {
 
         {/* Bottom Bar */}
         <div className="flex flex-col md:flex-row justify-between items-center text-sm text-muted-foreground pt-4">
-          <p>&copy; {new Date().getFullYear()} Magnova Therapeutics. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Magnova Therapeutics Pvt Ltd. All rights reserved.</p>
           <div className="flex items-center space-x-6 mt-4 md:mt-0">
             <span className="flex items-center">
-              Built with <span className="text-primary-red mx-1">❤</span> for Science
+              Built with <span className="text-primary-red mx-1">❤</span> for Indian healthcare
             </span>
           </div>
         </div>

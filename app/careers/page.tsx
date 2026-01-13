@@ -1,9 +1,14 @@
 import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import Image from "next/image"
 import Link from "next/link"
-import { ArrowRight, Briefcase, GraduationCap, Beaker, Users, Heart } from "lucide-react"
+import { ArrowRight, Beaker, Users, GraduationCap, Heart, CheckCircle2 } from "lucide-react"
+import { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "Careers",
+  description: "Join the Magnova Therapeutics team and help transform healthcare through science and innovation.",
+}
 
 export default function RecruitmentPage() {
   return (
@@ -18,13 +23,15 @@ export default function RecruitmentPage() {
             Be part of a passionate team dedicated to transforming skincare through science and innovation.
           </p>
           <div className="mt-8">
-            <Button className="bg-primary-green text-white hover:bg-primary-green/90">
-              View Open Positions <ArrowRight className="h-4 w-4 ml-2" />
-            </Button>
+            <Link href="/contact">
+              <Button className="bg-primary-green text-white hover:bg-primary-green/90">
+                Contact Us <ArrowRight className="h-4 w-4 ml-2" />
+              </Button>
+            </Link>
           </div>
         </div>
       </section>
-      
+
       {/* Why Join Us Section */}
       <section className="py-16 bg-secondary-beige/30">
         <div className="container mx-auto px-4">
@@ -34,7 +41,7 @@ export default function RecruitmentPage() {
               We're more than just a skincare company. We're a team of innovators committed to making a difference.
             </p>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
               {
@@ -71,99 +78,34 @@ export default function RecruitmentPage() {
           </div>
         </div>
       </section>
-      
-      {/* Open Positions Section */}
+
+      {/* Open Positions Section - Currently removed as per request */}
       <section className="py-16 bg-white" id="open-positions">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-secondary-charcoal mb-4">Open Positions</h2>
+            <h2 className="text-3xl font-bold text-secondary-charcoal mb-4">Join Our Team</h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              Explore opportunities to join our team and contribute to our mission.
+              We are always looking for talented individuals to join our mission. While we don't have specific open positions listed right now, we'd love to hear from you.
             </p>
           </div>
-          
-          <Tabs defaultValue="research" className="w-full max-w-4xl mx-auto">
-            <TabsList className="grid w-full grid-cols-3 mb-8">
-              <TabsTrigger value="research">Research & Development</TabsTrigger>
-              <TabsTrigger value="marketing">Marketing & Sales</TabsTrigger>
-              <TabsTrigger value="operations">Operations</TabsTrigger>
-            </TabsList>
-            
-            <TabsContent value="research" className="space-y-4">
-              {[
-                {
-                  title: "Senior Formulation Scientist",
-                  location: "Boston, MA",
-                  type: "Full-time",
-                  description: "Lead the development of innovative skincare formulations, collaborating with research partners and clinical teams."
-                },
-                {
-                  title: "Clinical Research Coordinator",
-                  location: "Remote",
-                  type: "Full-time",
-                  description: "Oversee clinical trials and testing of new product formulations, ensuring compliance with regulatory standards."
-                },
-                {
-                  title: "Laboratory Technician",
-                  location: "Boston, MA",
-                  type: "Full-time",
-                  description: "Support research and development activities by conducting experiments and analyzing test results."
-                }
-              ].map((job, index) => (
-                <JobCard key={index} job={job} />
-              ))}
-            </TabsContent>
-            
-            <TabsContent value="marketing" className="space-y-4">
-              {[
-                {
-                  title: "Digital Marketing Manager",
-                  location: "New York, NY",
-                  type: "Full-time",
-                  description: "Develop and implement digital marketing strategies to drive brand awareness and growth."
-                },
-                {
-                  title: "Content Creator",
-                  location: "Remote",
-                  type: "Contract",
-                  description: "Create engaging skincare content for social media platforms and blog to educate and inspire our audience."
-                }
-              ].map((job, index) => (
-                <JobCard key={index} job={job} />
-              ))}
-            </TabsContent>
-            
-            <TabsContent value="operations" className="space-y-4">
-              {[
-                {
-                  title: "Supply Chain Manager",
-                  location: "Boston, MA",
-                  type: "Full-time",
-                  description: "Oversee global supply chain operations to ensure efficient sourcing and delivery of high-quality ingredients and products."
-                },
-                {
-                  title: "Quality Assurance Specialist",
-                  location: "Boston, MA",
-                  type: "Full-time",
-                  description: "Ensure all products meet the highest standards of quality and safety through rigorous testing and inspection processes."
-                }
-              ].map((job, index) => (
-                <JobCard key={index} job={job} />
-              ))}
-            </TabsContent>
-          </Tabs>
-          
-          <div className="mt-12 text-center">
-            <p className="text-muted-foreground mb-4">Don't see a position that matches your skills?</p>
+
+          <div className="max-w-xl mx-auto text-center bg-secondary-beige/20 rounded-2xl p-8 border border-primary-gold/20">
+            <div className="mx-auto w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-sm mb-6">
+              <Users className="h-8 w-8 text-primary-gold" />
+            </div>
+            <h3 className="text-xl font-bold text-secondary-charcoal mb-3">Send Us Your Resume</h3>
+            <p className="text-muted-foreground mb-8">
+              If you're passionate about skincare science and want to make a difference, send your resume and cover letter to our HR team.
+            </p>
             <Link href="/contact">
-              <Button variant="outline" className="border-primary-green text-primary-green hover:bg-primary-green/10">
-                Submit Open Application
+              <Button className="bg-primary-gold text-secondary-charcoal hover:bg-primary-gold/90 w-full sm:w-auto font-bold">
+                Contact HR Team
               </Button>
             </Link>
           </div>
         </div>
       </section>
-      
+
       {/* Team Culture Section */}
       <section className="py-16 bg-primary-green/10">
         <div className="container mx-auto px-4">
@@ -173,7 +115,7 @@ export default function RecruitmentPage() {
               <p className="text-muted-foreground mb-6">
                 At Magnova, we foster a culture of collaboration, innovation, and continuous learning. We believe that diverse perspectives drive better solutions and are committed to creating an inclusive environment where everyone can thrive.
               </p>
-              
+
               <ul className="space-y-3">
                 <li className="flex items-start">
                   <div className="mr-3 mt-1 bg-primary-green text-white p-1 rounded-full">
@@ -201,32 +143,32 @@ export default function RecruitmentPage() {
                 </li>
               </ul>
             </div>
-            
+
             <div className="md:w-1/2 grid grid-cols-2 gap-4">
-              <Image 
-                src="/placeholder.svg" 
-                alt="Team Collaboration" 
+              <Image
+                src="/placeholder.svg"
+                alt="Team Collaboration"
                 width={300}
                 height={200}
                 className="rounded-lg shadow-md"
               />
-              <Image 
-                src="/placeholder.svg" 
-                alt="Office Environment" 
+              <Image
+                src="/placeholder.svg"
+                alt="Office Environment"
                 width={300}
                 height={200}
                 className="rounded-lg shadow-md"
               />
-              <Image 
-                src="/placeholder.svg" 
-                alt="Research Activity" 
+              <Image
+                src="/placeholder.svg"
+                alt="Research Activity"
                 width={300}
                 height={200}
                 className="rounded-lg shadow-md"
               />
-              <Image 
-                src="/placeholder.svg" 
-                alt="Team Event" 
+              <Image
+                src="/placeholder.svg"
+                alt="Team Event"
                 width={300}
                 height={200}
                 className="rounded-lg shadow-md"
@@ -235,7 +177,7 @@ export default function RecruitmentPage() {
           </div>
         </div>
       </section>
-      
+
       {/* Application Process Section */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
@@ -245,11 +187,11 @@ export default function RecruitmentPage() {
               We've designed a straightforward process to help you find the right opportunity with us.
             </p>
           </div>
-          
+
           <div className="max-w-4xl mx-auto">
             <div className="relative">
               <div className="absolute left-6 top-0 h-full w-0.5 bg-gray-200"></div>
-              
+
               <div className="space-y-12">
                 <div className="relative">
                   <div className="absolute left-0 top-0 w-12 h-12 rounded-full bg-primary-green flex items-center justify-center text-white font-bold">1</div>
@@ -260,7 +202,7 @@ export default function RecruitmentPage() {
                     </p>
                   </div>
                 </div>
-                
+
                 <div className="relative">
                   <div className="absolute left-0 top-0 w-12 h-12 rounded-full bg-primary-green flex items-center justify-center text-white font-bold">2</div>
                   <div className="ml-20">
@@ -270,7 +212,7 @@ export default function RecruitmentPage() {
                     </p>
                   </div>
                 </div>
-                
+
                 <div className="relative">
                   <div className="absolute left-0 top-0 w-12 h-12 rounded-full bg-primary-green flex items-center justify-center text-white font-bold">3</div>
                   <div className="ml-20">
@@ -280,7 +222,7 @@ export default function RecruitmentPage() {
                     </p>
                   </div>
                 </div>
-                
+
                 <div className="relative">
                   <div className="absolute left-0 top-0 w-12 h-12 rounded-full bg-primary-green flex items-center justify-center text-white font-bold">4</div>
                   <div className="ml-20">
@@ -296,30 +238,5 @@ export default function RecruitmentPage() {
         </div>
       </section>
     </main>
-  )
-}
-
-// Job Card Component
-function JobCard({ job }: { job: { title: string; location: string; type: string; description: string } }) {
-  return (
-    <Card className="border-none shadow-sm hover:shadow-md transition-shadow">
-      <CardHeader className="pb-2">
-        <div className="flex justify-between items-start">
-          <div>
-            <CardTitle className="text-lg font-medium text-secondary-charcoal">{job.title}</CardTitle>
-            <CardDescription className="flex items-center mt-1">
-              <Briefcase className="h-4 w-4 mr-1" />
-              {job.location} • {job.type}
-            </CardDescription>
-          </div>
-          <Button size="sm" className="bg-primary-gold text-secondary-charcoal hover:bg-primary-gold/90">
-            Apply
-          </Button>
-        </div>
-      </CardHeader>
-      <CardContent>
-        <p className="text-sm text-muted-foreground">{job.description}</p>
-      </CardContent>
-    </Card>
   )
 }

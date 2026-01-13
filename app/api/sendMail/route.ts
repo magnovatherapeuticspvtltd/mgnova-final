@@ -25,7 +25,7 @@ export async function POST(request: Request) {
     // Email content
     const mailOptions = {
       from: process.env.EMAIL_USER || "your-email@gmail.com",
-      to: "magnovahealthcare@gmail.com",
+      to: "Magnovatherapeuticspvtltd@gmail.com, info@magnovatherapeutics.com",
       subject: `Contact Form Submission from ${name}`,
       text: `
         Name: ${name}
