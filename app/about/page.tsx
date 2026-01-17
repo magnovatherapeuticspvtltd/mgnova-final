@@ -80,12 +80,11 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
             {[
               "Mr. Mrityunjay Rai",
-              "Alok Sahoo",
-              "Ravi Shankar Singh",
-              "Savera Gupta",
-              "Aditya Singh",
-              "Kalindi Devi",
-              "Sanjay Singh"
+              "Mr. Alok Sahoo",
+              "Mr. Ravi Shankar Singh",
+              "Mrs. Savera Gupta",
+              "Mr. Aditya Singh",
+              "Mr. Sanjay Singh"
             ].map((name, index) => (
               <Card key={index} className="text-center hover:shadow-md transition-shadow duration-300 border-gray-100 bg-gray-50/50">
                 <CardContent className="pt-6 pb-6">
@@ -113,16 +112,8 @@ export default function AboutPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
-              {
-                icon: <Award className="h-10 w-10 text-primary-red" />,
-                title: "Excellence",
-                description: "We maintain the highest standards in research, product development, and customer experience."
-              },
-              {
-                icon: <GraduationCap className="h-10 w-10 text-primary-red" />,
-                title: "Innovation",
-                description: "We continuously explore new technologies and approaches to advance skincare solutions."
-              },
+         
+           
               {
                 icon: <Users className="h-10 w-10 text-primary-red" />,
                 title: "Integrity",
@@ -130,19 +121,16 @@ export default function AboutPage() {
               },
               {
                 icon: <Globe className="h-10 w-10 text-primary-green" />,
-                title: "Sustainability",
-                description: "We strive to minimize our environmental impact through responsible sourcing and packaging."
+                title: "Honesty",
+                description: "We strive to build an Honest Healthcare ecosystem for Humankind."
               },
-              {
-                icon: <BarChart4 className="h-10 w-10 text-primary-green" />,
-                title: "Efficacy",
-                description: "We are committed to creating products that deliver measurable, visible results."
-              },
-              {
-                icon: <Award className="h-10 w-10 text-primary-green" />,
-                title: "Accessibility",
-                description: "We work to make effective skincare solutions available to diverse communities."
+                 {
+                icon: <GraduationCap className="h-10 w-10 text-primary-red" />,
+                title: "Loyalty",
+                description: "We continuously explore new technologies and approaches to advance skincare solutions."
               }
+            
+             
             ].map((value, index) => (
               <Card key={index} className="text-center border-none shadow-sm">
                 <CardHeader>
@@ -203,7 +191,7 @@ export default function AboutPage() {
                   <div className="absolute left-0 md:left-1/2 top-6 w-5 h-5 rounded-full bg-primary-green transform -translate-x-1/2"></div>
                   <div className="md:w-1/2 pl-10 md:pl-0 md:pr-12 text-left md:text-right">
                     <h3 className="text-xl font-bold text-primary-green">2025</h3>
-                    <h4 className="font-medium text-secondary-charcoal">LuxGlow Launch</h4>
+                    <h4 className="font-medium text-secondary-charcoal">LuxGlo Launch</h4>
                     <p className="text-sm text-muted-foreground">
                       Successfully launched our flagship LuxGlow Brightening Cream following successful clinical validation.
                     </p>

@@ -152,7 +152,7 @@ const ProductShowcase = ({ featuredOnly = false }: { featuredOnly?: boolean }) =
                 <div className="mt-6">
                   <Link href="mailto:Magnovatherapeuticspvtltd@gmail.com">
                     <Button className="w-full bg-secondary-charcoal text-white hover:bg-black transition-colors">
-                      Contact for Inquiry
+                   Buy Now
                     </Button>
                   </Link>
                 </div>

@@ -7,11 +7,7 @@ import { Calendar, Microscope, Sparkles, Users } from "lucide-react"
 
 const FeatureSection = () => {
   const features = [
-    {
-      icon: <Calendar className="h-8 w-8 text-primary-red" />,
-      title: "Virtual Skin Consultation",
-      description: "Book a personalized virtual consultation with our skincare experts.",
-    },
+
     {
       icon: <Microscope className="h-8 w-8 text-primary-red" />,
       title: "Ingredient Glossary",
@@ -39,7 +35,7 @@ const FeatureSection = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {features.map((feature, index) => (
             <motion.div
               key={index}
