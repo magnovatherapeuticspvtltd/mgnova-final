@@ -26,7 +26,7 @@ const Footer = () => {
               </div>
             </Link>
             <p className="text-muted-foreground leading-relaxed max-w-sm">
-              Pioneering the future of dermatological science. We blend advanced medical research with luxurious care to reveal your skin's true potential.
+              Pioneering the future of Medical science. We blend advanced medical research with real world experience to provide best in class healthcare solutions.
             </p>
             <div className="flex space-x-4 pt-2">
               {[Facebook, Twitter, Instagram, Linkedin].map((Icon, i) => (

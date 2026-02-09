@@ -20,7 +20,7 @@ export default function AboutPage() {
             About <span className="text-primary-red">Magnova</span> <span className="text-primary-green">Therapeutics</span>
           </h1>
           <p className="mt-4 text-muted-foreground text-base sm:text-lg">
-            Pioneering scientific skincare solutions for healthier, more radiant skin.
+            Pioneering the future of Medical science. We blend advanced medical research with real world experience to provide best in class healthcare solutions.
           </p>
         </div>
       </section>
@@ -84,7 +84,19 @@ export default function AboutPage() {
               "Mr. Ravi Shankar Singh",
               "Mrs. Savera Gupta",
               "Mr. Aditya Singh",
-              "Mr. Sanjay Singh"
+              "Mr. Sanjay Singh",
+              "Mr. Praveen Kumar Rao",
+              "Mr. Mukesh Verma",
+              "Mr. Sudhir Yadav",
+              "Mr. Vipul Prakash",
+              "Mr. Parth",
+              "Mr. Utpal Patel",
+              "Mrs. Sonia Mahajan",
+              "Mr. Pratik Mohta",
+              "Mr. Iftekaar",
+              "Mrs. Ruchika Singh",
+              "Mrs. Sruti Pradhan",
+              "Ms. Sudha Chaudhary"
             ].map((name, index) => (
               <Card key={index} className="text-center hover:shadow-md transition-shadow duration-300 border-gray-100 bg-gray-50/50">
                 <CardContent className="pt-6 pb-6">
@@ -112,8 +124,8 @@ export default function AboutPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
-         
-           
+
+
               {
                 icon: <Users className="h-10 w-10 text-primary-red" />,
                 title: "Integrity",
@@ -124,13 +136,13 @@ export default function AboutPage() {
                 title: "Honesty",
                 description: "We strive to build an Honest Healthcare ecosystem for Humankind."
               },
-                 {
+              {
                 icon: <GraduationCap className="h-10 w-10 text-primary-red" />,
                 title: "Loyalty",
                 description: "We continuously explore new technologies and approaches to advance skincare solutions."
               }
-            
-             
+
+
             ].map((value, index) => (
               <Card key={index} className="text-center border-none shadow-sm">
                 <CardHeader>
@@ -193,7 +205,7 @@ export default function AboutPage() {
                     <h3 className="text-xl font-bold text-primary-green">2025</h3>
                     <h4 className="font-medium text-secondary-charcoal">LuxGlo Launch</h4>
                     <p className="text-sm text-muted-foreground">
-                      Successfully launched our flagship LuxGlow Brightening Cream following successful clinical validation.
+                      Successfully launched our flagship LuxGlo Brightening Cream following successful clinical validation.
                     </p>
                   </div>
                 </div>
