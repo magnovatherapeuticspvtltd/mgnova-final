@@ -1,5 +1,6 @@
 import type React from "react"
 import type { Metadata } from "next"
+import Script from "next/script"
 import { Montserrat, Open_Sans, Playfair_Display } from "next/font/google"
 import "./globals.css"
 import Header from "@/components/Header"
@@ -64,6 +65,10 @@ export const metadata: Metadata = {
     shortcut: "/logo.svg",
     apple: "/logo.svg",
   },
+  metadataBase: new URL("https://magnovatherapeutics.com"),
+  alternates: {
+    canonical: "./",
+  },
 }
 
 export default function RootLayout({
@@ -71,9 +76,41 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode
 }>) {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "Magnova Therapeutics",
+    url: "https://magnovatherapeutics.com",
+    logo: "https://magnovatherapeutics.com/logo.svg",
+    contactPoint: {
+      "@type": "ContactPoint",
+      telephone: "+91-9118457314",
+      contactType: "customer service",
+      areaServed: "IN",
+      availableLanguage: "en",
+    },
+  }
+
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${montserrat.variable} ${openSans.variable} ${playfair.variable} font-sans`}>
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-TDD4HSRHL0"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-TDD4HSRHL0');
+          `}
+        </Script>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
           <Header />
           <main>{children}</main>
