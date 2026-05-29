@@ -1,6 +1,8 @@
 import SectionWrapper from "@/components/SectionWrapper"
 import ContactForm from "@/components/ContactForm"
 import { Phone, Mail, MapPin } from "lucide-react"
+import { Button } from "@/components/ui/button"
+import { whatsappInquiryUrl } from "@/lib/whatsapp"
 import { Metadata } from "next"
 
 export const metadata: Metadata = {
@@ -75,7 +77,12 @@ export default function ContactPage() {
 
         <div className="lg:w-1/2">
           <div className="bg-white rounded-2xl shadow-md border border-primary/20 p-6">
-            <h2 className="text-2xl font-medium text-primary mb-4">Send us a Message</h2>
+            <h2 className="text-2xl font-medium text-primary mb-4">Chat on WhatsApp</h2>
+            <div className="mb-4">
+              <Button asChild className="w-full bg-primary-red text-white hover:bg-primary-red/90 rounded-xl py-4 font-bold">
+                <a href={whatsappInquiryUrl} target="_blank" rel="noopener noreferrer">Chat on WhatsApp</a>
+              </Button>
+            </div>
             <ContactForm onSubmitEndpoint="/api/sendMail" />
           </div>
         </div>

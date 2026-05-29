@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation"
 import { Menu, Search, Moon, Sun, Globe } from "lucide-react"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
+import { whatsappInquiryUrl } from "@/lib/whatsapp"
 import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "@/components/ui/sheet"
 import { useTheme } from "next-themes"
 import { cn } from "@/lib/utils"
@@ -84,8 +85,8 @@ const Header = () => {
 
                 {/* Mobile Footer */}
                 <div className="p-6 border-t border-gray-100 bg-gray-50/50">
-                  <Button className="w-full bg-primary-red text-white hover:bg-primary-red/90 rounded-xl py-6 text-lg font-bold shadow-lg shadow-primary-red/20 transition-transform active:scale-95">
-                    Shop Collection
+                  <Button asChild className="w-full bg-primary-red text-white hover:bg-primary-red/90 rounded-xl py-6 text-lg font-bold shadow-lg shadow-primary-red/20 transition-transform active:scale-95">
+                    <a href={whatsappInquiryUrl} target="_blank" rel="noopener noreferrer">Shop Now</a>
                   </Button>
                 </div>
               </div>
@@ -134,8 +135,8 @@ const Header = () => {
 
         {/* Desktop Utilities */}
         <div className="hidden lg:flex items-center space-x-4 z-50">
-          <Button className="bg-primary-red text-white hover:bg-rose-800 rounded-full px-6 xl:px-8 py-5 text-xs xl:text-sm font-bold tracking-wide shadow-lg shadow-primary-red/20 hover:shadow-primary-red/40 transition-all transform hover:-translate-y-0.5 border-none">
-            Shop Now
+          <Button asChild className="bg-primary-red text-white hover:bg-rose-800 rounded-full px-6 xl:px-8 py-5 text-xs xl:text-sm font-bold tracking-wide shadow-lg shadow-primary-red/20 hover:shadow-primary-red/40 transition-all transform hover:-translate-y-0.5 border-none">
+            <a href={whatsappInquiryUrl} target="_blank" rel="noopener noreferrer">Shop Now</a>
           </Button>
         </div>
 
