@@ -6,6 +6,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
+import { whatsappInquiryUrl } from "@/lib/whatsapp"
 
 interface Product {
   id: number
@@ -93,6 +94,39 @@ const products: Product[] = [
     form: "Capsules (10x10 pack)",
     benefits: ["Reduces stomach acid production.", "Relieves symptoms of GERD and acid reflux.", "Prevents nausea and bloating."],
   },
+  {
+    id: 8,
+    name: "OSIFAVA",
+    category: "Bone Health",
+    description:
+      "OSIFAVA is a softgel capsule formulation combining calcitriol, calcium carbonate and zinc to support bone mineralization and strength.",
+    image: "/osifava.png",
+    composition:
+      "Calcitriol IP: 0.25 mcg; Calcium Carbonate (Oyster shell): 500 mg; Zinc Sulphate Monohydrate IP: 7.5 mg.",
+    form: "Softgel Capsules (10 x 10)",
+    benefits: [
+      "Calcitriol: Regulates intestinal calcium absorption.",
+      "Calcium Carbonate: Required for deposition of bone mineral throughout life.",
+      "Zinc: Essential for normal skeletal growth and bone homeostasis.",
+    ],
+    featured: false,
+  },
+  {
+    id: 9,
+    name: "Tufumbi",
+    category: "Rheumatology & Immunology",
+    description:
+      "Tufumbi (Tofacitinib Tablets IP 5mg) is a prescription therapy provided as film-coated tablets for conditions where JAK inhibition is indicated. Use as directed by the physician.",
+    image: "/tufumbi.png",
+    composition:
+      "Each film-coated tablet contains Tofacitinib Citrate IP equivalent to Tofacitinib 5 mg; Excipients q.s.; Colour: Titanium Dioxide IP.",
+    form: "Film-coated Tablets (10 x 10)",
+    benefits: [
+      "Effective JAK inhibitor therapy when prescribed by a physician.",
+      "Convenient oral administration as 5 mg tablets.",
+    ],
+    featured: false,
+  },
 ]
 
 const ProductShowcase = ({ featuredOnly = false }: { featuredOnly?: boolean }) => {
@@ -150,11 +184,11 @@ const ProductShowcase = ({ featuredOnly = false }: { featuredOnly?: boolean }) =
                 </div>
 
                 <div className="mt-6">
-                  <Link href="mailto:Magnovatherapeuticspvtltd@gmail.com">
-                    <Button className="w-full bg-secondary-charcoal text-white hover:bg-black transition-colors">
-                   Buy Now
-                    </Button>
-                  </Link>
+                  <Button asChild className="w-full bg-secondary-charcoal text-white hover:bg-black transition-colors">
+                    <a href={whatsappInquiryUrl} target="_blank" rel="noopener noreferrer">
+                      Chat on WhatsApp
+                    </a>
+                  </Button>
                 </div>
               </div>
             </div>

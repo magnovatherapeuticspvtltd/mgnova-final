@@ -4,6 +4,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { ArrowRight, Beaker, Users, GraduationCap, Heart, CheckCircle2 } from "lucide-react"
 import { Metadata } from "next"
+import { whatsappInquiryUrl } from "@/lib/whatsapp"
 
 export const metadata: Metadata = {
   title: "Careers",
@@ -23,11 +24,11 @@ export default function RecruitmentPage() {
             Be part of a passionate team dedicated to transforming skincare through science and innovation.
           </p>
           <div className="mt-8">
-            <Link href="/contact">
-              <Button className="bg-primary-green text-white hover:bg-primary-green/90">
+            <Button asChild className="bg-primary-green text-white hover:bg-primary-green/90">
+              <a href={whatsappInquiryUrl} target="_blank" rel="noopener noreferrer">
                 Contact Us <ArrowRight className="h-4 w-4 ml-2" />
-              </Button>
-            </Link>
+              </a>
+            </Button>
           </div>
         </div>
       </section>
@@ -97,11 +98,11 @@ export default function RecruitmentPage() {
             <p className="text-muted-foreground mb-8">
               If you're passionate about skincare science and want to make a difference, send your resume and cover letter to our HR team.
             </p>
-            <Link href="/contact">
-              <Button className="bg-primary-gold text-secondary-charcoal hover:bg-primary-gold/90 w-full sm:w-auto font-bold">
+            <Button asChild className="bg-primary-gold text-secondary-charcoal hover:bg-primary-gold/90 w-full sm:w-auto font-bold">
+              <a href={whatsappInquiryUrl} target="_blank" rel="noopener noreferrer">
                 Contact HR Team
-              </Button>
-            </Link>
+              </a>
+            </Button>
           </div>
         </div>
       </section>

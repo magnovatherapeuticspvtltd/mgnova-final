@@ -45,10 +45,10 @@ export default function ContactPage() {
                 <MapPin size={20} className="mr-3 text-accent mt-1 shrink-0" />
                 <div>
                   <p className="font-medium">Address</p>
-                  <p className="text-gray-700 max-w-xs">
-                    H49, PHASE -4 , RAPTI NAGAR<br />
-                    GORAKHPUR UTTAR PRADESH ,INDIA
-                  </p>
+                      <p className="text-gray-700 max-w-xs">
+                        HN 59, Street No. 4, A-Block, Ajit Vihar<br />
+                        Delhi 110084
+                      </p>
                 </div>
               </div>
             </div>

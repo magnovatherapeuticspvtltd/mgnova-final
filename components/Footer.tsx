@@ -66,10 +66,14 @@ const Footer = () => {
             </h3>
             <ul className="space-y-4 text-sm text-secondary-charcoal/80">
               <li className="flex items-start space-x-3">
+                <span className="font-bold text-primary-red shrink-0 w-16">Marketed by:</span>
+                <span className="leading-relaxed">Magnova Therapeutics Pvt. Ltd.</span>
+              </li>
+              <li className="flex items-start space-x-3">
                 <span className="font-bold text-primary-red shrink-0 w-16">Address:</span>
                 <span className="leading-relaxed">
-                  H49, Phase-4, Rapti Nagar,<br />
-                  Gorakhpur, Uttar Pradesh, India
+                  HN 59, Street No. 4, A-Block, Ajit Vihar,<br />
+                  Delhi 110084
                 </span>
               </li>
               <li className="flex items-start space-x-3">

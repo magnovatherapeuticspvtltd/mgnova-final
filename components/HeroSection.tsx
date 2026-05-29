@@ -4,6 +4,7 @@ import { motion } from "framer-motion"
 import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
+import { whatsappInquiryUrl } from "@/lib/whatsapp"
 
 const HeroSection = () => {
   return (
@@ -62,14 +63,11 @@ const HeroSection = () => {
                 Our Products
               </Button>
             </Link>
-            <Link href="mailto:Magnovatherapeuticspvtltd@gmail.com">
-              <Button
-                variant="outline"
-                className="border-primary-red/20 text-secondary-charcoal hover:bg-primary-red/5 hover:border-primary-red/40 rounded-full px-10 py-7 text-lg w-full sm:w-auto transition-all duration-300"
-              >
-                Contact Us
-              </Button>
-            </Link>
+            <Button asChild variant="outline" className="border-primary-red/20 text-secondary-charcoal hover:bg-primary-red/5 hover:border-primary-red/40 rounded-full px-10 py-7 text-lg w-full sm:w-auto transition-all duration-300">
+              <a href={whatsappInquiryUrl} target="_blank" rel="noopener noreferrer">
+                Chat on WhatsApp
+              </a>
+            </Button>
           </motion.div>
 
 

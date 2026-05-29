@@ -4,6 +4,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { ArrowRight, Award, Users, BarChart4, GraduationCap, Globe } from "lucide-react"
 import { Metadata } from "next"
+import { whatsappInquiryUrl } from "@/lib/whatsapp"
 
 export const metadata: Metadata = {
   title: "About Us",
@@ -44,11 +45,11 @@ export default function AboutPage() {
               </div>
 
               <div className="mt-8">
-                <Link href="mailto:Magnovatherapeuticspvtltd@gmail.com">
-                  <Button className="bg-primary-gold text-secondary-charcoal hover:bg-primary-gold/90">
+                <Button asChild className="bg-primary-gold text-secondary-charcoal hover:bg-primary-gold/90">
+                  <a href={whatsappInquiryUrl} target="_blank" rel="noopener noreferrer">
                     Contact Us <ArrowRight className="h-4 w-4 ml-2" />
-                  </Button>
-                </Link>
+                  </a>
+                </Button>
               </div>
             </div>
 

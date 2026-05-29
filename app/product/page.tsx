@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { CheckCircle2 } from "lucide-react"
 import { Metadata } from "next"
+import { whatsappInquiryUrl } from "@/lib/whatsapp"
 
 export const metadata: Metadata = {
   title: "Our Products",
@@ -39,11 +40,11 @@ export default function ProductPage() {
           </p>
 
           <div className="flex justify-center">
-            <Link href="mailto:Magnovatherapeuticspvtltd@gmail.com">
-              <Button className="bg-primary-red text-white hover:bg-primary-red/90 rounded-full px-8 py-6 text-lg">
-                Contact Us
-              </Button>
-            </Link>
+            <Button asChild className="bg-primary-red text-white hover:bg-primary-red/90 rounded-full px-8 py-6 text-lg">
+              <a href={whatsappInquiryUrl} target="_blank" rel="noopener noreferrer">
+                Chat on WhatsApp
+              </a>
+            </Button>
           </div>
         </div>
       </section>
