@@ -1,5 +1,4 @@
 import SectionWrapper from "@/components/SectionWrapper"
-import ContactForm from "@/components/ContactForm"
 import { Phone, Mail, MapPin } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { whatsappInquiryUrl } from "@/lib/whatsapp"
@@ -83,7 +82,6 @@ export default function ContactPage() {
                 <a href={whatsappInquiryUrl} target="_blank" rel="noopener noreferrer">Chat on WhatsApp</a>
               </Button>
             </div>
-            <ContactForm onSubmitEndpoint="/api/sendMail" />
           </div>
         </div>
       </div>
