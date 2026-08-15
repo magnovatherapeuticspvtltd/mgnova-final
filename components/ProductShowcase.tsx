@@ -127,6 +127,23 @@ const products: Product[] = [
     ],
     featured: false,
   },
+  {
+    id: 10,
+    name: "Cerafly LITY Barrier Boost Moisturizer",
+    category: "Dermatology & Skincare",
+    description:
+      "Cerafly LITY is a barrier boost moisturizer for all skin types. Its blend of Hyaluronic Acid, a Ceramide Complex and Tripeptide-1 is designed to support the skin barrier and help the skin hold on to moisture.",
+    image: "/cerafly-lity.jpg",
+    composition: "Hyaluronic Acid, Ceramide Complex, Tripeptide-1.",
+    form: "Cream (100 g / 3.52 oz.)",
+    benefits: [
+      "Helps support skin barrier function.",
+      "Helps hydrate the skin & lock in moisture.",
+      "Helps improve moisture retention.",
+      "Promotes skin firmness & elasticity.",
+    ],
+    featured: false,
+  },
 ]
 
 const ProductShowcase = ({ featuredOnly = false }: { featuredOnly?: boolean }) => {
@@ -186,7 +203,7 @@ const ProductShowcase = ({ featuredOnly = false }: { featuredOnly?: boolean }) =
                 <div className="mt-6">
                   <Button asChild className="w-full bg-secondary-charcoal text-white hover:bg-black transition-colors">
                     <a href={whatsappInquiryUrl} target="_blank" rel="noopener noreferrer">
-                      Chat on WhatsApp
+                      Buy Now
                     </a>
                   </Button>
                 </div>

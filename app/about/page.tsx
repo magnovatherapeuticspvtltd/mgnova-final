@@ -97,7 +97,8 @@ export default function AboutPage() {
               "Mr. Iftekaar",
               "Mrs. Ruchika Singh",
               "Mrs. Sruti Pradhan",
-              "Ms. Sudha Chaudhary"
+              "Ms. Sudha Chaudhary",
+              "Dr. Neha Taneja"
             ].map((name, index) => (
               <Card key={index} className="text-center hover:shadow-md transition-shadow duration-300 border-gray-100 bg-gray-50/50">
                 <CardContent className="pt-6 pb-6">
